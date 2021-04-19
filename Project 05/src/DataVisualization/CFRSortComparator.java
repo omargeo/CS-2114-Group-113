@@ -1,38 +1,33 @@
 package DataVisualization;
 import java.util.Comparator;
+
 /**
- * tried to pass double as param but you can't pass primatives into generics
+ * Creates comparator to compare based on a race's Case Fatality Ratio
  * @author Van Taylor (van7)
  * @version 2021.04.19
- * @param <A>
  */
-public class CFRSortComparator<A> implements Comparator<A> {
-
-    private final double THRESHOLD = 0.0001;
+public class CFRSortComparator implements Comparator<Race> {
     /**
-     * we must override the comparator class as double & not generic
-     * this is different from the generic values we wanted via the UML
-     * compare based on expectation the first double is higher than the second
-     * threshold is used for comparison
-     * @param race1
-     * @param race2
+     * We compare two races by their case fatality ratio
+     * Note: sort ranks smallest to largest
+     * @param race1 is the current race
+     * @param race2 is the race to compare to
      * @return the relationship between the two CFR values from the race class
-     * @precondition A is a double value
      */
     @Override
-    public int compare(A race1CFR, A race2CFR) {
-        double r1 = (double)race1CFR;
-        double r2 = (double)race2CFR;
+    public int compare(Race race1, Race race2) {
+        double r1 = race1.caseFatalityRatio();
+        double r2 = race2.caseFatalityRatio();
         if (r1 == r2) {
             return 0;
+            //you can then compare by alphabetical if they're equal
+            //I'd like to do it that way but I will leave it up to you all
         }
-        boolean flag = true;
-        flag = (Math.abs(r1 - r2) < THRESHOLD);
-        if (flag) {
-            return 1;
-        }
-        else {
+        else if (r1 > r2) {
             return -1;
+        }        
+        else {
+            return 1;
         }
     }
 }
