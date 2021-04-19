@@ -39,8 +39,25 @@ public class Race {
         return builder.toString();
     }
     
+    /**
+     * two races are equal if their names are equal
+     * @param obj is the object to compare to current race
+     * @return whether the object is a race equal to the current race
+     */
     public boolean equals(Object obj) {
-        //TODO
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (this.getClass() == obj.getClass()) {
+            Race casted = (Race)obj;
+            if(this.getName().equals(casted.getName())) {
+                return true;
+            }
+        }
+        return false;
     }
     
     public double caseFatalityRatio() {
