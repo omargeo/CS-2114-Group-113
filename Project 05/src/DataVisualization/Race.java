@@ -1,18 +1,18 @@
 package DataVisualization;
 
 public class Race {
-    private String type;
+    private String name;
     private int cases;
     private int deaths;
     
-    public Race(String type, int cases, int deaths) {
-        this.type = type;
+    public Race(String name, int cases, int deaths) {
+        this.name = name;
         this.cases = cases;
         this.deaths = deaths;
     }
     
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
     }
     
     public int getCases() {
@@ -22,9 +22,21 @@ public class Race {
     public int getDeaths() {
         return deaths;
     }
-    
+    /**
+     * To String Output: "Race: name, Cases: cases, Deaths: deaths"
+     * @return the string output of this race's attributes
+     */
     public String toString() {
-        //TODO
+        StringBuilder builder = new StringBuilder();
+        builder.append("Race: ");
+        builder.append(name);
+        builder.append(", ");
+        builder.append("Cases: ");
+        builder.append(cases);
+        builder.append(", ");
+        builder.append("Deaths: ");
+        builder.append(deaths);
+        return builder.toString();
     }
     
     public boolean equals(Object obj) {
