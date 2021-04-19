@@ -1,7 +1,7 @@
 package DataVisualization;
 
 public class CSVReader {
-    private SinglyLinkedList<State> list;
+    private SinglyLinkedList<State> states;
     
     public CSVReader(String file) {
         //TODO

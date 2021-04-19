@@ -2,10 +2,11 @@ package DataVisualization;
 
 public class State {
     private String name;
-    private SinglyLinkedList<Race> races;
+    private SinglyLinkedList<Race> raceList;
     
-    public State(String name, Race whiteRace, Race blackRace, Race latinXRace, Race asianRace, Race otherRace) {
+    public State(String name, SinglyLinkedList<Race> races) {
         this.name = name;
+        this.raceList = races;
         //TODO
     }
     
