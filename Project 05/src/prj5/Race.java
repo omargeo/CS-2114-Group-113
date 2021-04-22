@@ -75,8 +75,9 @@ public class Race {
      * @return the string output of this race's attributes
      */
     public String toString() {
+        DecimalFormat df = new DecimalFormat("0.0");
         String string = name + ": " + cases + " cases, " + 
-            deaths + " deaths, " + caseFatalityRatio() + "% CFR";
+            deaths + " deaths, " +  df.format(caseFatalityRatio()) + "% CFR";
         return string;
     }
     
@@ -105,6 +106,9 @@ public class Race {
     public double caseFatalityRatio() {
         //TODO 0.0 is returned instead of the right value
         //TODO work on the tenths decimal place of the returned value 
-        return (getDeaths() / getCases()) * 100;
+        if (!(getDeaths() >= 0) || !(getCases() >= 0)) {
+            return -1;
+        }
+        return ((double)getDeaths() / getCases()) * 100;
     }
 }
