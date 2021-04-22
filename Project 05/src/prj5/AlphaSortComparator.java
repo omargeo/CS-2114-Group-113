@@ -1,10 +1,16 @@
+/**
+ * @HonorCode As a Hokie, I will conduct myself with honor
+ * and integrity at all times. I will not lie, cheat, or steal,
+ * nor will I accept the actions of those who do.
+ */
+
 package prj5;
 import java.util.Comparator;
 
 /**
  * compares the names of races using the comparator class.
- * @author Van Taylor (van7)
- * @version 2021.04.19
+ * @author Van Taylor (van7), Omar Elgeoushy (omarelgeoushy)
+ * @version 2021.04.19, 04/22/2021
  */
 public class AlphaSortComparator implements Comparator<Race> {
 

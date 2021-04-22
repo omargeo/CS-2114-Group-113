@@ -9,6 +9,7 @@ import java.text.ParseException;
 import java.io.FileNotFoundException;
 
 /**
+ * This class tests the CSVReader class
  * @author Van Taylor (van7), Omar Elgeoushy (omarelgeoushy)
  * @version 2021.04.19, 04/21/2021
  */

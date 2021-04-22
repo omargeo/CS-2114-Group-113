@@ -71,13 +71,13 @@ public class Race {
     }
     
     /**
-     * To String Output: "Race: int cases, int deaths, Percent% CFR"
+     * To String Output: "Race: int cases, Percent% CFR"
      * @return the string output of this race's attributes
      */
     public String toString() {
         DecimalFormat df = new DecimalFormat("0.0");
         String string = name + ": " + cases + " cases, " + 
-            deaths + " deaths, " +  df.format(caseFatalityRatio()) + "% CFR";
+            df.format(caseFatalityRatio()) + "% CFR";
         return string;
     }
     

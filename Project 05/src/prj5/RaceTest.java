@@ -66,7 +66,7 @@ public class RaceTest extends student.TestCase {
      */
     public void testToString() {
         //is wrong for now until we fix CFR
-        assertEquals("Black: 7 cases, 3 deaths, 42.9% CFR", black.toString());
+        assertEquals("Black: 7 cases, 42.9% CFR", black.toString());
     }
     
     /**
