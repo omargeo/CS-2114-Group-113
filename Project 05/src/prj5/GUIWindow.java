@@ -1,4 +1,4 @@
-package DataVisualization;
+package prj5;
 
 import java.awt.Button;
 import java.awt.Window;

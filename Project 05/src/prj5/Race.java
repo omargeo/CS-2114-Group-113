@@ -4,7 +4,7 @@
  * nor will I accept the actions of those who do.
  */
 
-package DataVisualization;
+package prj5;
 
 import java.text.DecimalFormat;
 

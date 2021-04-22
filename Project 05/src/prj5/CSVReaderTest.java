@@ -3,7 +3,7 @@
  * and integrity at all times. I will not lie, cheat, or steal,
  * nor will I accept the actions of those who do.
  */
-package DataVisualization;
+package prj5;
 
 import java.text.ParseException;
 import java.io.FileNotFoundException;
