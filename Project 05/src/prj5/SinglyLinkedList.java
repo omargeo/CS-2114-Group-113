@@ -7,10 +7,15 @@
 package prj5;
 
 import java.util.Comparator;
+import java.util.Iterator;
 
-public class SinglyLinkedList<E> {
+public class SinglyLinkedList<E> implements Iterable<E> {
 
-    //TODO the iterator part
+    private class SLListIterator implements Iterator<E> {
+        //
+    }
+    
+    
     public static class Node<D> {
 
         // The data element stored in the node.
@@ -438,8 +443,13 @@ public class SinglyLinkedList<E> {
      * @param races is the races list
      * @param comp is the comparator being used
      */
-    public void sort(SinglyLinkedList<E> races, Comparator comp) {
-        //TODO
+    public void sort(SinglyLinkedList<E> races, Comparator<?> comp) {
+        if (comp.getClass() == AlphaSortComparator.class) {
+            //
+        }
+        if (comp.getClass() == CFRSortComparator.class) {
+            //
+        }
     }
 
 }
