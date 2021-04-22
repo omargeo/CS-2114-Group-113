@@ -7,10 +7,74 @@
 package prj5;
 
 import java.util.Comparator;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-public class SinglyLinkedList<E> {
+public class SinglyLinkedList<E> implements Iterable<E> {
 
-    //TODO the iterator part
+    private class SLListIterator<A> implements Iterator<E> {
+        
+        public Node<E> curr;
+        private SinglyLinkedList<E> list;
+        
+        /**
+         * Creates a new SLListIterator
+         */
+        public SLListIterator(SinglyLinkedList<E> sLList) {
+            list = sLList;
+            curr = list.head;
+        }
+        
+        /**
+         * Gets the current node in the list
+         * @return the current node
+         */
+        private Node<E> current() {
+            return curr;
+        }
+        
+        /**
+         * Checks if there are more elements in the list
+         *
+         * @return true if there are more elements in the list
+         */
+        @Override
+        public boolean hasNext() {
+            boolean next = true;
+            if (curr.data == null && curr.next.data == null) {
+                next = false;
+            }
+            return next;
+        }
+        
+        /**
+         *Gets the next value in the list
+         *
+         * @return the next value
+         * @throws NoSuchElementException
+         *             if there are no nodes left in the list
+         */
+        @Override
+        public E next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            E data = curr.getData();
+            curr = curr.next();
+            return data;
+        }
+        
+        // Not sure we need a remove method since our list is only
+        // singly-linked and there is no previous node -RC
+        
+        
+    }
+    
+    @Override
+    public Iterator<E> iterator() {
+        return new SLListIterator<E>(this);
+    }
+    
     public static class Node<D> {
 
         // The data element stored in the node.
@@ -66,6 +130,8 @@ public class SinglyLinkedList<E> {
 
     // the size of the linked list
     private int size;
+    
+    private Iterator<E> iter;
 
 
     /**
@@ -74,7 +140,7 @@ public class SinglyLinkedList<E> {
     public SinglyLinkedList() {
         head = null;
         size = 0;
-
+        iter = iterator();
     }
 
 
@@ -438,8 +504,37 @@ public class SinglyLinkedList<E> {
      * @param races is the races list
      * @param comp is the comparator being used
      */
-    public void sort(SinglyLinkedList<E> races, Comparator comp) {
-        //TODO
+    public void sort(SinglyLinkedList<E> races, Comparator<E> comp) {
+        Iterator<E> it = races.iter;
+        Node<E> curr = races.head;
+        if (comp.getClass() == AlphaSortComparator.class) {
+            while (it.hasNext()) {
+                int relate = comp.compare(curr.data, it.next());
+                if (relate <= 0) {
+                    curr = curr.next;
+                }
+                if (relate > 0) {
+                    Node<E> temp = curr;
+                    curr = curr.next;
+                    curr.setNext(temp);
+                    curr = temp;
+                }
+            }
+        }
+        if (comp.getClass() == CFRSortComparator.class) {
+            while (it.hasNext()) {
+                int relate = comp.compare(curr.data, it.next());
+                if (relate <= 0) {
+                    curr = curr.next;
+                }
+                if (relate > 0) {
+                    Node<E> temp = curr;
+                    curr = curr.next;
+                    curr.setNext(temp);
+                    curr = temp;
+                }
+            }
+        }
     }
 
 }
