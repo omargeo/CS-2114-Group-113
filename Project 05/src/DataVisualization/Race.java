@@ -9,13 +9,14 @@ package DataVisualization;
 import java.text.DecimalFormat;
 
 /**
- * This class is associated with the Race and forms 
- * how it behaves
+ * This class represents the collaborative Race/Ethnic Group that consists of
+ * the name of the race, the number of COVID-19 cases that group has, and the 
+ * number of COVID-19 deaths that group has.
  * 
  * @author Omar Elgeoushy omarelgeoushy
  * @version 04/21/2021
- *
  */
+
 public class Race {
     
     /**
@@ -38,7 +39,7 @@ public class Race {
      * @param name the name of the race
      * @param cases the number of cases
      * @param deaths the number of deaths
-     */
+     */ 
     public Race(String name, int cases, int deaths) {
         this.name = name;
         this.cases = cases;
@@ -48,7 +49,7 @@ public class Race {
     /**
      * A getter method for the name
      * @return String of the name
-     */
+     */ 
     public String getName() {
         return name;
     }
@@ -80,7 +81,7 @@ public class Race {
     }
     
     /**
-     * two races are equal if their names are equal
+     * Two races are equal if their names are equal
      * @param obj is the object to compare to current race
      * @return whether the object is a race equal to the current race
      */
