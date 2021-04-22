@@ -1,6 +1,7 @@
 package prj5;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import student.TestCase;
 
 /**
@@ -495,6 +496,19 @@ public class SLLEqualsToArrayTest extends TestCase {
      * tests sort method
      */
     public void testSort() {
-        //TODO
+        Race race1 = new Race("White", 10, 1);
+        Race race2 = new Race("Black", 8, 0);
+        Race race3 = new Race("Asian", 14, 2);
+        SinglyLinkedList<Race> list = new SinglyLinkedList<Race>();
+        list.add(race1);
+        list.add(race2);
+        list.add(race3);
+        assertEquals("{White: 10 cases, 10.0% CFR, Black: 8 cases, 0.0% CFR, Asian: 14 cases, 14.3% CFR}", list.toString());
+        Comparator<Race> alpha = new AlphaSortComparator();
+        Comparator<Race> cfr = new CFRSortComparator();
+        list.sort(list, alpha);
+        assertEquals("{Asian: 14 cases, 14.3% CFR, Black: 8 cases, 0.0% CFR, White: 10 cases, 10.0% CFR}", list.toString());
+        //list.sort(list, cfr);
+        //assertEquals("{Asian: 14 cases, 14.3% CFR, White: 10 cases, 10.0% CFR, Black: 8 cases, 0.0% CFR}", list.toString());
     }
 }

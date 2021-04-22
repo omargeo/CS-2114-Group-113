@@ -10,6 +10,16 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+
+/**
+ * The SinglyLinkedList implements Linked-List arithmetic in order
+ * to sort the different Races.
+ * 
+ * @author Ryan Clarke (ryanc01)
+ * @version 04.22.2021
+ *
+ * @param <E> the generic element
+ */
 public class SinglyLinkedList<E> implements Iterable<E> {
 
     private class SLListIterator<A> implements Iterator<E> {
@@ -41,14 +51,14 @@ public class SinglyLinkedList<E> implements Iterable<E> {
         @Override
         public boolean hasNext() {
             boolean next = true;
-            if (curr.data == null && curr.next.data == null) {
+            if (curr.next.data == null) {
                 next = false;
             }
             return next;
         }
         
         /**
-         *Gets the next value in the list
+         * Gets the next value in the list
          *
          * @return the next value
          * @throws NoSuchElementException
@@ -505,23 +515,29 @@ public class SinglyLinkedList<E> implements Iterable<E> {
      * @param comp is the comparator being used
      */
     public void sort(SinglyLinkedList<E> races, Comparator<E> comp) {
-        Iterator<E> it = races.iter;
+        //SinglyLinkedList<E> sorted = new SinglyLinkedList<E>();
         Node<E> curr = races.head;
+        //sorted.head = curr;
         if (comp.getClass() == AlphaSortComparator.class) {
-            while (it.hasNext()) {
-                int relate = comp.compare(curr.data, it.next());
+            while (curr != null) {
+                Node<E> next = curr.next;
+                sortInsert(races, curr, comp);
+                curr = next;
+               /* int relate = comp.compare(curr.data, curr.next.data);
                 if (relate <= 0) {
                     curr = curr.next;
                 }
                 if (relate > 0) {
+                    Node<E> next = curr.next;
                     Node<E> temp = curr;
-                    curr = curr.next;
-                    curr.setNext(temp);
-                    curr = temp;
-                }
+                    curr = next;
+                    next = temp;
+                } */
             }
+            //return sorted;
+            
         }
-        if (comp.getClass() == CFRSortComparator.class) {
+  /*      if (comp.getClass() == CFRSortComparator.class) {
             while (it.hasNext()) {
                 int relate = comp.compare(curr.data, it.next());
                 if (relate <= 0) {
@@ -534,6 +550,22 @@ public class SinglyLinkedList<E> implements Iterable<E> {
                     curr = temp;
                 }
             }
+        } */
+        //return null;
+    }
+    
+    private void sortInsert(SinglyLinkedList<E> list, Node<E> node, Comparator<E> comp) {
+        if (list == null || (comp.compare(list.head.data, node.data) < 0)) {
+            node.next = list.head;
+            list.head = node;
+        }
+        else {
+            Node<E> current = list.head;
+            while ((current.next != null) && (comp.compare(current.next.data, node.data) >= 0)) {
+                current = current.next;
+            }
+            node.next = current.next;
+            current.next = node;
         }
     }
 
