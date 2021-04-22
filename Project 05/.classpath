@@ -2,5 +2,8 @@
 <classpath>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CS2DataStructuresLib"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CS2GraphWindowLib"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CS2-Support"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

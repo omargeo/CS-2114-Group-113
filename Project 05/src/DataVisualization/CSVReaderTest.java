@@ -4,15 +4,15 @@
  * nor will I accept the actions of those who do.
  */
 package DataVisualization;
-import student.TestCase;
+
 import java.text.ParseException;
 import java.io.FileNotFoundException;
 
 /**
- * @author Van Taylor (van7)
- * @version 2021.04.19
+ * @author Van Taylor (van7), Omar Elgeoushy (omarelgeoushy)
+ * @version 2021.04.19, 04/21/2021
  */
-public class CSVReaderTest extends TestCase {
+public class CSVReaderTest extends student.TestCase {
     private String[] races = {"White", "Black", "LatinX", "Asian", "Other"};
     private CSVReader reader;
     public void setUp() {
