@@ -36,14 +36,21 @@ public class StateTest extends student.TestCase {
     private Race white;
     
     /**
+     * a variable that holds the race
+     */
+    private Race asian;
+    
+    /**
      * setUp method of the testing class
      */
     public void setUp() {
         black = new Race("Black", 10, 4);
         white = new Race("White", 10, 3);
+        asian = new Race("Asian", 10, 2);
         
         races = new SinglyLinkedList<Race>();
         races.add(white);
+        races.add(asian);
         races.add(black);
         
         state = new State("VA", races);
@@ -68,6 +75,7 @@ public class StateTest extends student.TestCase {
      */
     public void testSortByAlpha() {
         SinglyLinkedList<Race> races1 = new SinglyLinkedList<Race>();
+        races1.add(asian);
         races1.add(black);
         races1.add(white);
         
@@ -82,12 +90,15 @@ public class StateTest extends student.TestCase {
         SinglyLinkedList<Race> races1 = new SinglyLinkedList<Race>();
         races1.add(black);
         races1.add(white);
+        races1.add(asian);
         state.sortByCFR();
         assertEquals(races1, state.getRaces());
         
         races1 = new SinglyLinkedList<Race>();
         black = new Race("Black", 10, 4);
         white = new Race("White", 10, 4);
+        asian = new Race("Asian", 10, 4);
+        races1.add(asian);
         races1.add(black);
         races1.add(white);
         state.sortByCFR();
@@ -100,6 +111,7 @@ public class StateTest extends student.TestCase {
     public void testToString() {
         //Needs to be changed when we fix the CFR method
         assertEquals("VA\nWhite: 10 cases, 30.0% CFR\n"
+            + "Asian: 10 cases, 20.0% CFR\n"
             + "Black: 10 cases, 40.0% CFR", state.toString());
     }
     
