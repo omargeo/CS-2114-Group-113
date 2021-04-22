@@ -8,13 +8,64 @@ package prj5;
 
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class SinglyLinkedList<E> implements Iterable<E> {
 
-    private class SLListIterator implements Iterator<E> {
-        //
+    private class SLListIterator<A> implements Iterator<E> {
+        
+        private Node<E> curr;
+        private SinglyLinkedList<E> list;
+        
+        /**
+         * Creates a new SLListIterator
+         */
+        public SLListIterator(SinglyLinkedList<E> sLList) {
+            list = sLList;
+            curr = list.head;
+        }
+        
+        /**
+         * Checks if there are more elements in the list
+         *
+         * @return true if there are more elements in the list
+         */
+        @Override
+        public boolean hasNext() {
+            boolean next = true;
+            if (curr.data == null && curr.next.data == null) {
+                next = false;
+            }
+            return next;
+        }
+        
+        /**
+         *Gets the next value in the list
+         *
+         * @return the next value
+         * @throws NoSuchElementException
+         *             if there are no nodes left in the list
+         */
+        @Override
+        public E next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            E data = curr.getData();
+            curr = curr.next();
+            return data;
+        }
+        
+        // Not sure we need a remove method since our list is only
+        // singly-linked and there is no previous node -RC
+        
+        
     }
     
+    @Override
+    public Iterator<E> iterator() {
+        return new SLListIterator<E>(this);
+    }
     
     public static class Node<D> {
 
@@ -71,6 +122,8 @@ public class SinglyLinkedList<E> implements Iterable<E> {
 
     // the size of the linked list
     private int size;
+    
+    private Iterator<E> iter;
 
 
     /**
@@ -79,7 +132,7 @@ public class SinglyLinkedList<E> implements Iterable<E> {
     public SinglyLinkedList() {
         head = null;
         size = 0;
-
+        iter = iterator();
     }
 
 
