@@ -6,7 +6,7 @@ import java.util.Comparator;
  * @author Van Taylor (van7)
  * @version 2021.04.19
  */
-public class AlphaSortComparator implements Comparator<String> {
+public class AlphaSortComparator implements Comparator<Race> {
 
     /**
      * compares the two strings lexicographically
@@ -16,7 +16,7 @@ public class AlphaSortComparator implements Comparator<String> {
      * relationship race1 has with race2
      */
     @Override
-    public int compare(String race1, String race2) {
-        return(race1.compareToIgnoreCase(race2));
+    public int compare(Race race1, Race race2) {
+        return(race1.getName().compareToIgnoreCase(race2.getName()));
     }
 }
