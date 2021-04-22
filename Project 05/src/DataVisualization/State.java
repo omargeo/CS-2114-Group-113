@@ -15,28 +15,54 @@ package DataVisualization;
  *
  */
 public class State {
+    /**
+     * A variable that holds the name
+     */
     private String name;
+    
+    /**
+     * A variable that holds the raceList
+     */
     private SinglyLinkedList<Race> raceList;
     
+    /**
+     * Constructor of the class
+     * @param name the name of the state
+     * @param races is the list of races
+     */
     public State(String name, SinglyLinkedList<Race> races) {
         this.name = name;
         this.raceList = races;
     }
     
+    /**
+     * A getter method for the name
+     * @return a string 
+     */
     public String getName() {
         return name;
     }
     
+    /**
+     * A getter method for the race list
+     * @return raceList of the state
+     */
     public SinglyLinkedList<Race> getRaces() {
         return raceList;
     }
     
+    /**
+     * Sorts the races based on the alpha
+     */
     public void sortByAlpha() {
-        //TODO
+        raceList.sort(raceList, new AlphaSortComparator());
     }
     
+    /**
+     * Sorts the races based on the CFR
+     */
     public void sortByCFR() {
-        //TODO
+        raceList.sort(raceList, new CFRSortComparator());
     }
     
     /**
