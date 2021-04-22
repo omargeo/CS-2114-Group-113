@@ -99,8 +99,8 @@ public class StateTest extends student.TestCase {
      */
     public void testToString() {
         //Needs to be changed when we fix the CFR method
-        assertEquals("VA\nWhite: 10 cases, 3 deaths, 0.0% CFR\n"
-            + "Black: 10 cases, 4 deaths, 0.0% CFR", state.toString());
+        assertEquals("VA\nWhite: 10 cases, 3 deaths, 30.0% CFR\n"
+            + "Black: 10 cases, 4 deaths, 40.0% CFR", state.toString());
     }
     
     /**
