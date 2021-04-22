@@ -8,10 +8,10 @@ import student.TestCase;
  * Tests the equals and toArray methods of a singly linked list.
  * 
  * @author Margaret Ellis (maellis1)
- * 
  * @author Jeff Robertson (thejar)
+ * @author Omar Elgeoushy (omarelgeoushy)
  * 
- * @version 03/19/2017
+ * @version 04/22/2021
  *
  */
 public class SLLEqualsToArrayTest extends TestCase {
@@ -489,5 +489,12 @@ public class SLLEqualsToArrayTest extends TestCase {
         emptyListA.add("input");
         emptyListA.add("input1");
         assertTrue(emptyListA.remove("input1"));
+    }
+    
+    /**
+     * tests sort method
+     */
+    public void testSort() {
+        
     }
 }
