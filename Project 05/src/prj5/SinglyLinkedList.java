@@ -14,7 +14,7 @@ public class SinglyLinkedList<E> implements Iterable<E> {
 
     private class SLListIterator<A> implements Iterator<E> {
         
-        private Node<E> curr;
+        public Node<E> curr;
         private SinglyLinkedList<E> list;
         
         /**
@@ -23,6 +23,14 @@ public class SinglyLinkedList<E> implements Iterable<E> {
         public SLListIterator(SinglyLinkedList<E> sLList) {
             list = sLList;
             curr = list.head;
+        }
+        
+        /**
+         * Gets the current node in the list
+         * @return the current node
+         */
+        private Node<E> current() {
+            return curr;
         }
         
         /**
@@ -496,12 +504,36 @@ public class SinglyLinkedList<E> implements Iterable<E> {
      * @param races is the races list
      * @param comp is the comparator being used
      */
-    public void sort(SinglyLinkedList<E> races, Comparator<?> comp) {
+    public void sort(SinglyLinkedList<E> races, Comparator<E> comp) {
+        Iterator<E> it = races.iter;
+        Node<E> curr = races.head;
         if (comp.getClass() == AlphaSortComparator.class) {
-            //
+            while (it.hasNext()) {
+                int relate = comp.compare(curr.data, it.next());
+                if (relate <= 0) {
+                    curr = curr.next;
+                }
+                if (relate > 0) {
+                    Node<E> temp = curr;
+                    curr = curr.next;
+                    curr.setNext(temp);
+                    curr = temp;
+                }
+            }
         }
         if (comp.getClass() == CFRSortComparator.class) {
-            //
+            while (it.hasNext()) {
+                int relate = comp.compare(curr.data, it.next());
+                if (relate <= 0) {
+                    curr = curr.next;
+                }
+                if (relate > 0) {
+                    Node<E> temp = curr;
+                    curr = curr.next;
+                    curr.setNext(temp);
+                    curr = temp;
+                }
+            }
         }
     }
 
