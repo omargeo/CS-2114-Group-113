@@ -433,6 +433,11 @@ public class SinglyLinkedList<E> {
         return false;
     }
     
+    /**
+     * Sorts the races list based on alphabet or CFR value
+     * @param races is the races list
+     * @param comp is the comparator being used
+     */
     public void sort(SinglyLinkedList<E> races, Comparator comp) {
         //TODO
     }
