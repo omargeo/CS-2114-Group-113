@@ -14,5 +14,24 @@ package prj5;
  *
  */
 public class CFRSortComparatorTest extends student.TestCase {
-    //TODO
+    
+    /**
+     * Tests the compare method 
+     */
+    public void testCompare() {
+        CFRSortComparator cfrSortComparator = new CFRSortComparator();
+        Race black = new Race("Black", 7, 3);
+        Race white = new Race("White", 7, 3);
+        assertEquals(0, cfrSortComparator.compare(black, white));
+        
+        black = new Race("Black", 7, 7);
+        white = new Race("White", 7, 3);
+        assertEquals(-1, cfrSortComparator.compare(black, white));
+        
+        black = new Race("Black", 7, 3);
+        white = new Race("White", 7, 7);
+        assertEquals(1, cfrSortComparator.compare(black, white));
+    }
+    
+    
 }

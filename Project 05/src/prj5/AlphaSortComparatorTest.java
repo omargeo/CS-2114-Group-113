@@ -14,5 +14,20 @@ package prj5;
  *
  */
 public class AlphaSortComparatorTest extends student.TestCase {
-    //TODO
+    
+    /**
+     * Tests the compare method 
+     */
+    public void testCompare() {
+        AlphaSortComparator alphaSortComparator = new AlphaSortComparator();
+        Race black = new Race("Black", 7, 3);
+        Race white = new Race("White", 7, 3);
+        int number = alphaSortComparator.compare(black, white);
+        assertTrue(number < 0);
+        
+        number = alphaSortComparator.compare(white, black);
+        assertTrue(number > 0);
+        
+        assertEquals(0, alphaSortComparator.compare(white, white));
+    }
 }
