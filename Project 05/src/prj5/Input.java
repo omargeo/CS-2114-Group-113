@@ -4,7 +4,6 @@
  * nor will I accept the actions of those who do.
  */
 package prj5;
-
 import java.io.FileNotFoundException;
 import java.text.ParseException;
 
@@ -29,23 +28,20 @@ public class Input {
         CSVReader reader;
         if (args.length == 1) {
             reader = new CSVReader(args[0]);
+            for (State state : reader.getStates()) {            
+                System.out.println(state.getName());                        
+                state.sortByAlpha();
+                System.out.println(state.toString());
+                System.out.println("=====");
+                state.sortByCFR();
+                System.out.println(state.toString());
+                System.out.println("=====");
+            }
         }
         else {
             reader = new CSVReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
-            //Output
-            for (State state : reader.getStates()) {
-                System.out.println(state.getName());
-                SinglyLinkedList<Race> list = state.getRaces();
-                AlphaSortComparator alpha = new AlphaSortComparator();
-                CFRSortComparator cfr = new CFRSortComparator();
-                list.sort(list, alpha);
-                System.out.println(list.toString());
-                System.out.println("=====");
-                list.sort(list, cfr);
-                System.out.println(list.toString());
-                System.out.println("=====");
-                
-                //I think is code will work better
+            for (State state : reader.getStates()) {            
+                System.out.println(state.getName());                        
                 state.sortByAlpha();
                 System.out.println(state.toString());
                 System.out.println("=====");

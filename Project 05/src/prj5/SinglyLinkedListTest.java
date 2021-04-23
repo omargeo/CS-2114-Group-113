@@ -15,7 +15,7 @@ import student.TestCase;
  * @version 04/22/2021
  *
  */
-public class SLLEqualsToArrayTest extends TestCase {
+public class SinglyLinkedListTest extends TestCase {
 
     private SinglyLinkedList<String> emptyListA;
     private SinglyLinkedList<String> emptyListB;
