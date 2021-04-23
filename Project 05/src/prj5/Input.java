@@ -43,9 +43,16 @@ public class Input {
         }
         else {
             reader = new CSVReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
-            Object[] theStates = reader.getStates().toArray();
-            for (Object state : theStates) {
-                System.out.println(state.toString());
+            SinglyLinkedList<State> theStates = reader.getStates();
+            for (int i = 0; theStates.get(i) != null && i < theStates.size() - 1; i++) {
+                State currentState = theStates.get(i);
+                System.out.println(currentState.getName());
+                currentState.sortByAlpha();
+                System.out.println(currentState.toString());
+                System.out.println("=====");
+                currentState.sortByCFR();
+                System.out.println(currentState.toString());
+                System.out.println("=====");
             }
         }
 
