@@ -14,7 +14,7 @@ import java.text.ParseException;
  * 
  * @author Ryan Clarke (ryanc01)
  * @author Van Taylor (van7)
- * @version 04.22.2021
+ * @version 04.23.2021
  *
  */
 public class Input {
@@ -35,6 +35,15 @@ public class Input {
             //Output
             for (State state : reader.getStates()) {
                 System.out.println(state.getName());
+                SinglyLinkedList<Race> list = state.getRaces();
+                AlphaSortComparator alpha = new AlphaSortComparator();
+                CFRSortComparator cfr = new CFRSortComparator();
+                list.sort(list, alpha);
+                System.out.println(list.toString());
+                System.out.println("=====");
+                list.sort(list, cfr);
+                System.out.println(list.toString());
+                System.out.println("=====");
             }
         }
 
