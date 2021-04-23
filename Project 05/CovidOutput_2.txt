@@ -1,0 +1,78 @@
+DC
+asian: 55264 cases, 16.8% CFR
+black: 38347 cases, 0.9% CFR
+latinx: 29945 cases, 15.3% CFR
+other: 68227 cases, 8.5% CFR
+white: 85454 cases, 0.3% CFR
+=====
+asian: 55264 cases, 16.8% CFR
+latinx: 29945 cases, 15.3% CFR
+other: 68227 cases, 8.5% CFR
+black: 38347 cases, 0.9% CFR
+white: 85454 cases, 0.3% CFR
+=====
+GA
+asian: 55816 cases, 13.5% CFR
+black: 30341 cases, 9.6% CFR
+latinx: 11740 cases, 81.8% CFR
+other: 56230 cases, 15.1% CFR
+white: 56845 cases, 3.6% CFR
+=====
+latinx: 11740 cases, 81.8% CFR
+other: 56230 cases, 15.1% CFR
+asian: 55816 cases, 13.5% CFR
+black: 30341 cases, 9.6% CFR
+white: 56845 cases, 3.6% CFR
+=====
+MD
+asian: 62800 cases, 14.5% CFR
+black: 24422 cases, 30.4% CFR
+latinx: 35777 cases, 1.9% CFR
+other: 16290 cases, 38.6% CFR
+white: 92158 cases, 0.5% CFR
+=====
+other: 16290 cases, 38.6% CFR
+black: 24422 cases, 30.4% CFR
+asian: 62800 cases, 14.5% CFR
+latinx: 35777 cases, 1.9% CFR
+white: 92158 cases, 0.5% CFR
+=====
+NC
+asian: 80950 cases, 2.7% CFR
+black: 29158 cases, 0.9% CFR
+latinx: 55944 cases, 8.8% CFR
+other: 58937 cases, 2.4% CFR
+white: 78457 cases, 11.5% CFR
+=====
+white: 78457 cases, 11.5% CFR
+latinx: 55944 cases, 8.8% CFR
+asian: 80950 cases, 2.7% CFR
+other: 58937 cases, 2.4% CFR
+black: 29158 cases, 0.9% CFR
+=====
+TN
+asian: 31972 cases, 8.4% CFR
+black: 72620 cases, 10.6% CFR
+latinx: 37223 cases, 4.3% CFR
+other: 36822 cases, 5.8% CFR
+white: 10350 cases, 52.7% CFR
+=====
+white: 10350 cases, 52.7% CFR
+black: 72620 cases, 10.6% CFR
+asian: 31972 cases, 8.4% CFR
+other: 36822 cases, 5.8% CFR
+latinx: 37223 cases, 4.3% CFR
+=====
+VA
+asian: 37276 cases, 10.7% CFR
+black: 17344 cases, 56.6% CFR
+latinx: 36689 cases, 25% CFR
+other: 60088 cases, 1.2% CFR
+white: 85505 cases, 9.7% CFR
+=====
+black: 17344 cases, 56.6% CFR
+latinx: 36689 cases, 25% CFR
+asian: 37276 cases, 10.7% CFR
+white: 85505 cases, 9.7% CFR
+other: 60088 cases, 1.2% CFR
+=====

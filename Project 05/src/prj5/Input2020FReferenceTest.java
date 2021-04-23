@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import student.testingsupport.annotations.Hint;
-
+import student.TestCase;
 /**
  * Test text output for Music Visualization Project
  * 
@@ -13,7 +13,7 @@ import student.testingsupport.annotations.Hint;
  * @author Molly Hickman <mollygh>
  * @version Fall 2020
  */
-public class Input2020FReferenceTest extends student.TestCase {
+public class Input2020FReferenceTest extends TestCase {
     private String fileName;
     private Scanner fileData;
 
