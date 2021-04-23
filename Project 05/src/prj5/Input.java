@@ -25,18 +25,18 @@ public class Input {
      * @throws ParseException 
      * @throws FileNotFoundException 
      */
-    public static void main(String[] args) throws FileNotFoundException, 
-    ParseException {
+    public static void main(String[] args) throws FileNotFoundException {
         CSVReader reader;
         if (args.length == 1) {
             reader = new CSVReader(args[0]);
         }
         else {
             reader = new CSVReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
+            //Output
+            for (State state : reader.getStates()) {
+                System.out.println(state.getName());
+            }
         }
-        //Output
-        for (State state : reader.getStates()) {
-            System.out.println(state.getName());
-        }
+
     }
 }

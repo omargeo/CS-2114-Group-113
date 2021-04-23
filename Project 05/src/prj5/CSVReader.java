@@ -28,8 +28,7 @@ public class CSVReader {
      * @throws FileNotFoundException
      */
     public CSVReader(String fileName)
-        throws FileNotFoundException,
-        ParseException {
+        throws FileNotFoundException {
         states = readCSV(fileName);
         GUIWindow window = new GUIWindow(states);
     }
@@ -43,8 +42,7 @@ public class CSVReader {
      * @throws ParseException if the data is not formatted correctly
      * @throws FileNotFoundException if the file link is bad
      */
-    private SinglyLinkedList<State> readCSV(String fileName)
-        throws ParseException,
+    private SinglyLinkedList<State> readCSV(String fileName) throws
         FileNotFoundException {
         File theFile = new File(fileName);
         Scanner file = new Scanner(theFile);
@@ -65,7 +63,8 @@ public class CSVReader {
             // verify adjusted length is divisible by 2
             // length - 1 because you're removing the first value
             if ((stateData.length - 1) % 2 != 0) {
-                throw new ParseException("cases and deaths are uneven", 0);
+                file.close();                
+                //throw new ParseException("cases and deaths are uneven", 0);
             }
             // create new array excluding first value of original
             String[] caseAndDeathData = Arrays.copyOfRange(stateData, 1,
@@ -75,12 +74,14 @@ public class CSVReader {
             // split the cases & deaths into two arrays
             Integer[] caseVals = readInts(caseAndDeathData, 0, halfway);
             if (caseVals == null) {
-                throw new ParseException("Data is not Integer or NA", 0);
+                file.close();
+                //throw new ParseException("Data is not Integer or NA", 0);
             }
             Integer[] deathVals = readInts(caseAndDeathData, halfway - 1,
                 caseAndDeathData.length);
             if (deathVals == null) {
-                throw new ParseException("Data is not Integer or NA", 0);
+                file.close();
+                //throw new ParseException("Data is not Integer or NA", 0);
             }
             // create races and add them to the LinkedList
             for (int i = 0; i < halfway; i++) {
@@ -90,6 +91,7 @@ public class CSVReader {
             State nextState = new State(stateName, races);
             stateList.add(nextState);            
         }
+        file.close();
         //once all lines have been read, return the list of states
         return stateList;
     }

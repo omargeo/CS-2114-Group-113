@@ -24,11 +24,8 @@ public class CSVReaderTest extends student.TestCase {
         Exception thrown = null;
         try {
             reader = new CSVReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
-        }
-        catch (ParseException e) {
-            thrown = e;
-        }
-        catch (FileNotFoundException e) {
+        }        
+        catch (Exception e) {
             thrown = e;
         }
         finally {
