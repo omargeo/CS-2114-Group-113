@@ -13,6 +13,7 @@ import java.text.ParseException;
  * to be parsed.
  * 
  * @author Ryan Clarke (ryanc01)
+ * @author Van Taylor (van7)
  * @version 04.22.2021
  *
  */
@@ -24,16 +25,17 @@ public class Input {
      * @throws ParseException 
      * @throws FileNotFoundException 
      */
-    @SuppressWarnings("unused")
     public static void main(String[] args) throws FileNotFoundException, 
     ParseException {
         CSVReader reader;
         if (args.length == 1) {
             reader = new CSVReader(args[0]);
         }
-        
+        else {
+            reader = new CSVReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
+        }
         //Output
-        for (State state : reader.states) {
+        for (State state : reader.getStates()) {
             System.out.println(state.getName());
         }
     }

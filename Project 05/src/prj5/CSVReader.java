@@ -163,4 +163,8 @@ public class CSVReader {
         }
         return true;
     }
+    
+    public SinglyLinkedList<State> getStates() {
+        return states;
+    }
 }
