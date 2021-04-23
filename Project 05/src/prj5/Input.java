@@ -27,8 +27,14 @@ public class Input {
     @SuppressWarnings("unused")
     public static void main(String[] args) throws FileNotFoundException, 
     ParseException {
+        CSVReader reader;
         if (args.length == 1) {
-            CSVReader reader = new CSVReader(args[0]);
+            reader = new CSVReader(args[0]);
+        }
+        
+        //Output
+        for (State state : reader.states) {
+            System.out.println(state.getName());
         }
     }
 }

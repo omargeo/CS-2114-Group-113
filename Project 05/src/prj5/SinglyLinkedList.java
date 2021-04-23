@@ -515,58 +515,47 @@ public class SinglyLinkedList<E> implements Iterable<E> {
      * @param comp is the comparator being used
      */
     public void sort(SinglyLinkedList<E> races, Comparator<E> comp) {
-        //SinglyLinkedList<E> sorted = new SinglyLinkedList<E>();
         Node<E> curr = races.head;
-        //sorted.head = curr;
         if (comp.getClass() == AlphaSortComparator.class) {
             while (curr != null) {
                 Node<E> next = curr.next;
                 sortInsert(races, curr, comp);
                 curr = next;
-               /* int relate = comp.compare(curr.data, curr.next.data);
-                if (relate <= 0) {
-                    curr = curr.next;
-                }
-                if (relate > 0) {
-                    Node<E> next = curr.next;
-                    Node<E> temp = curr;
-                    curr = next;
-                    next = temp;
-                } */
-            }
-            //return sorted;
-            
+            } 
+        }            
+        if (comp.getClass() == CFRSortComparator.class) {
+            while (curr != null) {
+                Node<E> next = curr.next;
+                sortInsert(races, curr, comp);
+                curr = next;
+            } 
         }
-  /*      if (comp.getClass() == CFRSortComparator.class) {
-            while (it.hasNext()) {
-                int relate = comp.compare(curr.data, it.next());
-                if (relate <= 0) {
-                    curr = curr.next;
-                }
-                if (relate > 0) {
-                    Node<E> temp = curr;
-                    curr = curr.next;
-                    curr.setNext(temp);
-                    curr = temp;
-                }
-            }
-        } */
-        //return null;
-    }
+    } 
     
+    /**
+     * Inserts the specified node into the sorted section of the list
+     * @param list the SinglyLinkedList being adjusted
+     * @param node the node to be rearranged
+     * @param comp the specified comparator
+     */
     private void sortInsert(SinglyLinkedList<E> list, Node<E> node, Comparator<E> comp) {
         if (list == null || (comp.compare(list.head.data, node.data) < 0)) {
             node.next = list.head;
             list.head = node;
         }
-        else {
+        else { 
             Node<E> current = list.head;
-            while ((current.next != null) && (comp.compare(current.next.data, node.data) >= 0)) {
+            while ((current.next != null) && (comp.compare(current.next.data, node.data) < 0)) {
                 current = current.next;
             }
             node.next = current.next;
             current.next = node;
         }
     }
+    
+    
+    
+    
+    
 
 }
