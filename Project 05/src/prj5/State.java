@@ -90,6 +90,7 @@ public class State {
     
     /**
      * A method that checks if both the objects matches
+     * @param obj is the state we are comparing it to
      * 
      * @return true if they match, false otherwise
      */
@@ -123,7 +124,8 @@ public class State {
             else if (getRaces().get(i).getCases() != races.get(i).getCases()) {
                 return false;
             }
-            else if (getRaces().get(i).getDeaths() != races.get(i).getDeaths()) {
+            else if (getRaces().get(i).getDeaths() != 
+                races.get(i).getDeaths()) {
                 return false;
             }
         }
