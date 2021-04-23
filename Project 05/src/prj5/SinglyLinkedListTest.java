@@ -506,9 +506,10 @@ public class SinglyLinkedListTest extends TestCase {
         assertEquals("{White: 10 cases, 10.0% CFR, Black: 8 cases, 0.0% CFR, Asian: 14 cases, 14.3% CFR}", list.toString());
         Comparator<Race> alpha = new AlphaSortComparator();
         Comparator<Race> cfr = new CFRSortComparator();
-        list.sort(list, alpha);
+        list.insertionSort(alpha);
+        System.out.print(list);
         assertEquals("{Asian: 14 cases, 14.3% CFR, Black: 8 cases, 0.0% CFR, White: 10 cases, 10.0% CFR}", list.toString());
-        //list.sort(list, cfr);
-        //assertEquals("{Asian: 14 cases, 14.3% CFR, White: 10 cases, 10.0% CFR, Black: 8 cases, 0.0% CFR}", list.toString());
+        list.insertionSort(cfr);
+        assertEquals("{Asian: 14 cases, 14.3% CFR, White: 10 cases, 10.0% CFR, Black: 8 cases, 0.0% CFR}", list.toString());
     }
 }

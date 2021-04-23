@@ -29,7 +29,7 @@ public class Input {
         if (args.length == 1) {
             reader = new CSVReader(args[0]);
             for (State state : reader.getStates()) {            
-                System.out.println(state.getName());                        
+                System.out.println(state.getName());
                 state.sortByAlpha();
                 System.out.println(state.toString());
                 System.out.println("=====");

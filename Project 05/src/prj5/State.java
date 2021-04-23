@@ -55,14 +55,14 @@ public class State {
      * Sorts the races based on the alpha
      */
     public void sortByAlpha() {
-        raceList.sort(raceList, new AlphaSortComparator());
+        raceList.insertionSort(new AlphaSortComparator());
     }
     
     /**
      * Sorts the races based on the CFR
      */
     public void sortByCFR() {
-        raceList.sort(raceList, new CFRSortComparator());
+        raceList.insertionSort(new CFRSortComparator());
     }
     
     /**

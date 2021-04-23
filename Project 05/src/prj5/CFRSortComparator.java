@@ -25,9 +25,8 @@ public class CFRSortComparator implements Comparator<Race> {
         double r1 = race1.caseFatalityRatio();
         double r2 = race2.caseFatalityRatio();
         if (r1 == r2) {
-            return 0;
-            //you can then compare by alphabetical if they're equal
-            //I'd like to do it that way but I will leave it up to you all
+            AlphaSortComparator alpha = new AlphaSortComparator();
+            return(alpha.compare(race1, race2));
         }
         else if (r1 > r2) {
             return -1;

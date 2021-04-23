@@ -153,7 +153,6 @@ public class SinglyLinkedList<E> implements Iterable<E> {
         iter = iterator();
     }
 
-
     /**
      * Gets the number of elements in the list
      *
@@ -505,57 +504,41 @@ public class SinglyLinkedList<E> implements Iterable<E> {
                 return true;
             }
         }
-
         return false;
     }
-    
     /**
      * Sorts the races list based on alphabet or CFR value
+     * @param comp is the comparator used to compare nodes in the list
+     * @param node is the node to be inserted into the sorted list
+     */
+    private void sort(Comparator<E> comp, Node<E> node) {
+        E data = node.getData();
+        Node<E> current = head.next();
+        while (current != null && (comp.compare(data, current.getData()) < 0)) {
+            current = current.next();
+        }
+        node.setNext(head.next());
+        head.setNext(node);
+    }
+    /**
+     * uses insertion sort to loop through and insert a node into the sorted section of the list
      * @param races is the races list
      * @param comp is the comparator being used
      */
-    public void sort(SinglyLinkedList<E> races, Comparator<E> comp) {
-        Node<E> curr = races.head;
-        if (comp.getClass() == AlphaSortComparator.class) {
-            while (curr != null) {
-                Node<E> next = curr.next;
-                sortInsert(races, curr, comp);
-                curr = next;
-            } 
-        }            
-        if (comp.getClass() == CFRSortComparator.class) {
-            while (curr != null) {
-                Node<E> next = curr.next;
-                sortInsert(races, curr, comp);
-                curr = next;
-            } 
-        }
-    } 
-    
-    /**
-     * Inserts the specified node into the sorted section of the list
-     * @param list the SinglyLinkedList being adjusted
-     * @param node the node to be rearranged
-     * @param comp the specified comparator
-     */
-    private void sortInsert(SinglyLinkedList<E> list, Node<E> node, Comparator<E> comp) {
-        if (list == null || (comp.compare(list.head.data, node.data) < 0)) {
-            node.next = list.head;
-            list.head = node;
-        }
-        else { 
-            Node<E> current = list.head;
-            while ((current.next != null) && (comp.compare(current.next.data, node.data) < 0)) {
-                current = current.next;
+    public void insertionSort(Comparator<E> comp) {
+        Node <E> firstNode = head.next();
+        if (this.size() > 1) {
+            Node<E> unsortedNode = firstNode.next();
+            firstNode.setNext(null);
+            while (unsortedNode != null) {
+                Node<E> input = unsortedNode;
+                unsortedNode = unsortedNode.next();
+                sort(comp, input);
             }
-            node.next = current.next;
-            current.next = node;
         }
-    }
-    
-    
-    
-    
-    
-
+        Node<E> current = head;
+        while (current.next != null) {
+            current = current.next;
+        }
+    }               
 }
