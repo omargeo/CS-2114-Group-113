@@ -23,6 +23,6 @@ public class AlphaSortComparator implements Comparator<Race> {
      */
     @Override
     public int compare(Race race1, Race race2) {
-        return(race1.getName().compareToIgnoreCase(race2.getName()));
+        return (race1.getName().compareToIgnoreCase(race2.getName()));
     }
 }
