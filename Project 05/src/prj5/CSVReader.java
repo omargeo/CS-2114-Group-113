@@ -14,7 +14,6 @@ import java.util.Scanner;
  */
 public class CSVReader {
     private SinglyLinkedList<State> states;
-    private SinglyLinkedList<Race> races;
     private static final int NA_Parse = -1;
     private String[] raceNames;
 
@@ -47,15 +46,17 @@ public class CSVReader {
         File theFile = new File(fileName);
         Scanner file = new Scanner(theFile);
         file.useDelimiter(",");
-        // instantiate state and race lists
+        // instantiate state list
         SinglyLinkedList<State> stateList = new SinglyLinkedList<State>();
-        races = new SinglyLinkedList<Race>();
+        
         // create first line behavior
         String firstLine = file.nextLine();
         String[] firstLineData = firstLine.split(",");
         raceNames = readFirstLine(firstLineData);
         // create behavior for remaining lines
         while (file.hasNextLine()) {
+            //instantiate race list for each state
+            SinglyLinkedList<Race> theRace = new SinglyLinkedList<Race>();
             String nextLine = file.nextLine();
             String[] stateData = nextLine.split(",");
             // we know the first value in the array must be the state name
@@ -85,10 +86,10 @@ public class CSVReader {
             }
             // create races and add them to the LinkedList
             for (int i = 0; i < halfway; i++) {
-                races.add(new Race(raceNames[i], caseVals[i], deathVals[i]));
+                theRace.add(new Race(raceNames[i], caseVals[i], deathVals[i]));
             }
             //create the state and add it to the LinkedList
-            State nextState = new State(stateName, races);
+            State nextState = new State(stateName, theRace);
             stateList.add(nextState);            
         }
         file.close();

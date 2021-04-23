@@ -26,11 +26,11 @@ public class CFRSortComparator implements Comparator<Race> {
         double r2 = race2.caseFatalityRatio();
         if (r1 == r2) {
             AlphaSortComparator alpha = new AlphaSortComparator();
-            return(alpha.compare(race1, race2));
+            return (alpha.compare(race1, race2));
         }
         else if (r1 > r2) {
             return -1;
-        }        
+        }
         else {
             return 1;
         }

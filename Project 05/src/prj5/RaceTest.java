@@ -5,6 +5,7 @@
  */
 
 package prj5;
+import student.TestCase;
 
 /**
  * This class tests the Race class
@@ -13,7 +14,7 @@ package prj5;
  * @version 04/21/2021
  *
  */
-public class RaceTest extends student.TestCase {
+public class RaceTest extends TestCase {
     
     /**
      * a variable that holds the race

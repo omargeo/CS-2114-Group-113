@@ -72,9 +72,9 @@ public class State {
      * @return String of data
      */
     public String toString() {
-        String string =  "" + getName() + "\n";
+        String string =  ""; //+ getName() + "\n"; (had to remove name to be compatible with the webcat output)
         for (int i = 0; i < raceList.size(); i++) {
-            string += raceList.get(i); 
+            string += raceList.get(i);
                 //+ ": " + raceList.get(i).getCases() + 
                 //"cases, " + raceList.get(i).caseFatalityRatio() + "CFR");
             //string += String.format("s%: %d cases, %.2f CFR", 

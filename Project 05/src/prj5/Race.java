@@ -103,12 +103,13 @@ public class Race {
      * Calculates the CFR 
      * @return double of the CFR
      */
-    public double caseFatalityRatio() {
-        //TODO 0.0 is returned instead of the right value
-        //TODO work on the tenths decimal place of the returned value 
-        if (!(getDeaths() >= 0) || !(getCases() >= 0)) {
-            return -1;
+    public double caseFatalityRatio() {  
+        if ((getDeaths() < 0) || (getCases() < 0)) {
+            return -1;            
         }
-        return ((double)getDeaths() / getCases()) * 100;
+        else {
+            double cfr = ((double)getDeaths() / getCases()) * 100;
+            return (cfr);
+        }
     }
 }
