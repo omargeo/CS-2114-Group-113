@@ -514,12 +514,29 @@ public class SinglyLinkedList<E> implements Iterable<E> {
      */
     private void sort(Comparator<E> comp, Node<E> node) {
         E data = node.getData();
-        Node<E> current = head.next();
-        while (current != null && (comp.compare(data, current.getData()) > 0)) {
+        Node<E> current = head;
+        Node<E> beforeCurrent = null;
+        //head -> 1
+        //head -> 1
+        //head.next -> 4
+        //Node<E> beforeCurrent = head;
+        //node data is it greater than node we're currently on?
+        //keep going until it is not greater than anymore
+        //insertion happens at 1 node prior to the node at which current > data
+        while (current != null && (comp.compare(node.getData(), current.getData()) > 0)) {
+            beforeCurrent = current;
             current = current.next();
         }
-        node.setNext(head.next());
-        head.setNext(node);
+        node.setNext(current);
+        //we need node before current
+        if (beforeCurrent != null) {
+            beforeCurrent.setNext(node);
+        }
+        else {
+            //if the head is greater than what we're trying to insert
+            //we need to insert that node before the head
+            head = node;
+        }
     }
     
     /**
@@ -528,7 +545,7 @@ public class SinglyLinkedList<E> implements Iterable<E> {
      * @param comp is the comparator being used
      */
     public void insertionSort(Comparator<E> comp) {
-        Node <E> firstNode = head.next();
+        Node <E> firstNode = head;
         if (this.size() > 1) {
             Node<E> unsortedNode = firstNode.next();
             firstNode.setNext(null);
@@ -537,10 +554,6 @@ public class SinglyLinkedList<E> implements Iterable<E> {
                 unsortedNode = unsortedNode.next();
                 sort(comp, input);
             }
-        }
-        Node<E> current = head;
-        while (current.next != null) {
-            current = current.next;
         }
     }               
 }
