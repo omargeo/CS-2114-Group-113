@@ -44,6 +44,14 @@ public class Input {
                 list.sort(list, cfr);
                 System.out.println(list.toString());
                 System.out.println("=====");
+                
+                //I think is code will work better
+                state.sortByAlpha();
+                System.out.println(state.toString());
+                System.out.println("=====");
+                state.sortByCFR();
+                System.out.println(state.toString());
+                System.out.println("=====");
             }
         }
 
