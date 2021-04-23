@@ -13,6 +13,7 @@ import java.text.ParseException;
  * 
  * @author Ryan Clarke (ryanc01)
  * @author Van Taylor (van7)
+ * @author Omar Elgeoushy (omarelgeoushy)
  * @version 04.23.2021
  *
  */
