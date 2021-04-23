@@ -101,6 +101,11 @@ public class StateTest extends student.TestCase {
         races1.add(asian);
         races1.add(black);
         races1.add(white);
+        races = new SinglyLinkedList<Race>();
+        races.add(white);
+        races.add(asian);
+        races.add(black);
+        state = new State("VA", races);
         state.sortByCFR();
         assertEquals(races1, state.getRaces());
     }
