@@ -34,8 +34,23 @@ public class CSVReaderTest extends student.TestCase {
                 thrown.printStackTrace();
             }
         }
+        assertNull(thrown);
     }
-    public void testReadFirstLine() {
-        
+    
+    public void testReadCSV2() {
+        Exception thrown = null;
+        try {
+            reader = new CSVReader("Cases_and_Deaths_by_race_RANDOM_NUMBERS.csv");
+        }        
+        catch (Exception e) {
+            thrown = e;
+        }
+        finally {
+            if (thrown != null) {
+                System.out.println(thrown.getMessage());
+                thrown.printStackTrace();
+            }
+        }
+        assertNull(thrown);
     }
 }

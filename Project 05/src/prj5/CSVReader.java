@@ -29,7 +29,7 @@ public class CSVReader {
     public CSVReader(String fileName)
         throws FileNotFoundException {
         states = readCSV(fileName);
-        GUIWindow window = new GUIWindow(states);
+        //GUIWindow window = new GUIWindow(states);
     }
 
     /**
