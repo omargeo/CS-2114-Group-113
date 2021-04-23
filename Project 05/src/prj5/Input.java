@@ -5,7 +5,6 @@
  */
 package prj5;
 import java.io.FileNotFoundException;
-import java.text.ParseException;
 
 /**
  * The Input class passes the data file the user sent in to the CSVReader class
@@ -22,7 +21,6 @@ public class Input {
     /**
      * Passes the correct data file on to the CSVReader to be parsed
      * @param args the files being input by the user
-     * @throws ParseException 
      * @throws FileNotFoundException 
      */
     public static void main(String[] args) throws FileNotFoundException {
