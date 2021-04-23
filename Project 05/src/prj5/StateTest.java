@@ -119,7 +119,7 @@ public class StateTest extends student.TestCase {
      * tests the equals method and checkContent
      */
     public void testEquals() {
-        assertFalse(state.equals(null));
+        assertFalse(state == null);
         
         Object obj = new Object();
         assertFalse(state.equals(obj));
