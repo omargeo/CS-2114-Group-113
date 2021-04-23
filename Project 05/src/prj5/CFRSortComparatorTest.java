@@ -22,7 +22,8 @@ public class CFRSortComparatorTest extends student.TestCase {
         CFRSortComparator cfrSortComparator = new CFRSortComparator();
         Race black = new Race("Black", 7, 3);
         Race white = new Race("White", 7, 3);
-        assertEquals(0, cfrSortComparator.compare(black, white));
+        int i = cfrSortComparator.compare(black, white);
+        assertTrue(i < 0);
         
         black = new Race("Black", 7, 7);
         white = new Race("White", 7, 3);
