@@ -63,10 +63,10 @@ public class CSVReader {
             String stateName = stateData[0];
             // verify adjusted length is divisible by 2
             // length - 1 because you're removing the first value
-            if ((stateData.length - 1) % 2 != 0) {
-                file.close();                
-                //throw new ParseException("cases and deaths are uneven", 0);
-            }
+//            if ((stateData.length - 1) % 2 != 0) {
+//                file.close();                
+//                //throw new ParseException("cases and deaths are uneven", 0);
+//            }
             // create new array excluding first value of original
             String[] caseAndDeathData = Arrays.copyOfRange(stateData, 1,
                 stateData.length);
@@ -74,16 +74,16 @@ public class CSVReader {
             int halfway = caseAndDeathData.length / 2;
             // split the cases & deaths into two arrays
             Integer[] caseVals = readInts(caseAndDeathData, 0, halfway);
-            if (caseVals == null) {
-                file.close();
-                //throw new ParseException("Data is not Integer or NA", 0);
-            }
-            Integer[] deathVals = readInts(caseAndDeathData, halfway - 1,
+//            if (caseVals == null) {
+//                file.close();
+//                //throw new ParseException("Data is not Integer or NA", 0);
+//            }
+            Integer[] deathVals = readInts(caseAndDeathData, halfway,
                 caseAndDeathData.length);
-            if (deathVals == null) {
-                file.close();
-                //throw new ParseException("Data is not Integer or NA", 0);
-            }
+//            if (deathVals == null) {
+//                file.close();
+//                //throw new ParseException("Data is not Integer or NA", 0);
+//            }
             // create races and add them to the LinkedList
             for (int i = 0; i < halfway; i++) {
                 theRace.add(new Race(raceNames[i], caseVals[i], deathVals[i]));
