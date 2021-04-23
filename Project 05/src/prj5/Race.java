@@ -75,7 +75,7 @@ public class Race {
      * @return the string output of this race's attributes
      */
     public String toString() {
-        DecimalFormat df = new DecimalFormat("0.0");
+        DecimalFormat df = new DecimalFormat("0.#");
         String string = name + ": " + cases + " cases, " + 
             df.format(caseFatalityRatio()) + "% CFR";
         return string;
