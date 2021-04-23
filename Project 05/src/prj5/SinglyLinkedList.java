@@ -506,6 +506,7 @@ public class SinglyLinkedList<E> implements Iterable<E> {
         }
         return false;
     }
+    
     /**
      * Sorts the races list based on alphabet or CFR value
      * @param comp is the comparator used to compare nodes in the list
@@ -514,12 +515,13 @@ public class SinglyLinkedList<E> implements Iterable<E> {
     private void sort(Comparator<E> comp, Node<E> node) {
         E data = node.getData();
         Node<E> current = head.next();
-        while (current != null && (comp.compare(data, current.getData()) < 0)) {
+        while (current != null && (comp.compare(data, current.getData()) > 0)) {
             current = current.next();
         }
         node.setNext(head.next());
         head.setNext(node);
     }
+    
     /**
      * uses insertion sort to loop through and insert a node into the sorted section of the list
      * @param races is the races list
