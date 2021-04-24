@@ -83,7 +83,8 @@ public class RaceTest extends TestCase {
         Object obj = new Object();
         assertFalse(black.equals(obj));
         
-        assertFalse(black.equals(null));
+        obj = null;
+        assertFalse(black.equals(obj));
         
         assertFalse(black.equals(white));
         
