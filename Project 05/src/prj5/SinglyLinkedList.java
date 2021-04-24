@@ -43,9 +43,9 @@ public class SinglyLinkedList<E> implements Iterable<E> {
          * gets the current node
          * @return Node<E> of the current node
          */
-        public Node<E> getCurrent() {
-            return curr;                       
-        }
+        //public Node<E> getCurrent() {
+        //    return curr;                       
+        //}
         
         /**
          * Checks if there are more elements in the list
@@ -526,7 +526,7 @@ public class SinglyLinkedList<E> implements Iterable<E> {
      * @param node is the node to be inserted into the sorted list
      */
     private void sort(Comparator<E> comp, Node<E> node) {
-        E data = node.getData();
+        //E data = node.getData();
         Node<E> current = head;
         Node<E> beforeCurrent = null;
         //head -> 1
