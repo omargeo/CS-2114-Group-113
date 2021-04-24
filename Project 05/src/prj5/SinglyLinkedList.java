@@ -3,7 +3,6 @@
  *            and integrity at all times. I will not lie, cheat, or steal,
  *            nor will I accept the actions of those who do.
  */
-
 package prj5;
 
 import java.util.Comparator;
@@ -13,8 +12,21 @@ import java.util.NoSuchElementException;
 /**
  * The SinglyLinkedList implements Linked-List arithmetic in order
  * to sort the different Races.
- * 
- * @author Ryan Clarke (ryanc01)
+ * Original created by:
+ * @author Mark Wiggans (mmw125)
+ * @version 4/14/2015
+ * @author Christina Olk (colk)
+ * @version 9.4.15
+ * @author Grace Fields
+ * @version 10.26.15
+ * @author Jamal Ahmad (jamal93)
+ * @version 10/15/2016
+ * @author Margaret Ellis (maellis1)
+ * @version 03/16/2017
+ * @author JW Lee (jiayiw6)
+ * @version 10/14/2019
+ * changes made by:
+ * @author Van Taylor (van7)
  * @version 04.22.2021
  *
  * @param <E>
