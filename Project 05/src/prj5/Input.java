@@ -28,7 +28,7 @@ public class Input {
         if (args.length == 1) {
             reader = new CSVReader(args[0]);
             SinglyLinkedList<State> theStates = reader.getStates();
-            for (int i = 0; theStates.get(i) != null && i < theStates.size() - 1; i++) {
+            for (int i = 0; i < theStates.size(); i++) {
                 State currentState = theStates.get(i);
                 System.out.println(currentState.getName());
                 currentState.sortByAlpha();
@@ -42,7 +42,7 @@ public class Input {
         else {
             reader = new CSVReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
             SinglyLinkedList<State> theStates = reader.getStates();
-            for (int i = 0; theStates.get(i) != null && i < theStates.size() - 1; i++) {
+            for (int i = 0; i < theStates.size(); i++) {
                 State currentState = theStates.get(i);
                 System.out.println(currentState.getName());
                 currentState.sortByAlpha();
