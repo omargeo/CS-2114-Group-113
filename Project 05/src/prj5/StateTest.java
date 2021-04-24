@@ -134,24 +134,29 @@ public class StateTest extends student.TestCase {
         SinglyLinkedList<Race> races1 = new SinglyLinkedList<Race>();
         races1.add(white);
         State state1 = new State("VA", races1);
-        //races1.add(black);
-        assertFalse(state.equals(state1));
+        SinglyLinkedList<Race> races2 = new SinglyLinkedList<Race>();
+        Race other = new Race("Other", 10, 3);
+        races2.add(other);
+        State state2 = new State("VA", races2);
+        assertFalse(state2.equals(state1));
         
-        black = new Race("b", 10, 3);
-        races1.add(black);
-        state1 = new State("VA", races1);
-        assertFalse(state.equals(state1));
+        other = new Race("White", 9, 3);
+        races2 = new SinglyLinkedList<Race>();
+        races2.add(other);
+        state2 = new State("VA", races2);
+        assertFalse(state2.equals(state1));
         
-        races1.remove(1);
-        black = new Race("black", 11, 3);
-        races1.add(black);
-        state1 = new State("VA", races1);
-        assertFalse(state.equals(state1));
+        other = new Race("White", 10, 2);
+        races2 = new SinglyLinkedList<Race>();
+        races2.add(other);
+        state2 = new State("VA", races2);
+        assertFalse(state2.equals(state1));
         
-        races1.remove(1);
-        black = new Race("black", 10, 4);
-        races1.add(black);
-        state1 = new State("VA", races1);
-        assertFalse(state.equals(state1));
+        other = new Race("White", 10, 3);
+        races2 = new SinglyLinkedList<Race>();
+        races2.add(other);
+        races2.add(other);
+        state2 = new State("VA", races2);
+        assertFalse(state2.equals(state1));
     }
 }
