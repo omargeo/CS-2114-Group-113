@@ -13,7 +13,7 @@ import java.text.DecimalFormat;
  * the name of the race, the number of COVID-19 cases that group has, and the 
  * number of COVID-19 deaths that group has.
  * 
- * @author Omar Elgeoushy omarelgeoushy
+ * @author Omar Elgeoushy (omarelgeoushy)
  * @version 04/21/2021
  */
 

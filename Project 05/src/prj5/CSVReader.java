@@ -10,6 +10,7 @@ import java.util.Scanner;
  * reads the CSV file and parses it into a LinkedList of state objects
  * 
  * @author Van Taylor (van7)
+ * @author Omar Elgeoushy (omarelgeoushy)
  * @version 2021.04.19
  */
 public class CSVReader {

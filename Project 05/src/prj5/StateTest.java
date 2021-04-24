@@ -9,7 +9,7 @@ package prj5;
 /**
  * This class tests the State class
  * 
- * @author Omar Elgeoushy omarelgeoushy
+ * @author Omar Elgeoushy (omarelgeoushy)
  * @version 04/21/2021
  *
  */

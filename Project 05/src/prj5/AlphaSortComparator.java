@@ -9,7 +9,8 @@ import java.util.Comparator;
 
 /**
  * compares the names of races using the comparator class.
- * @author Van Taylor (van7), Omar Elgeoushy (omarelgeoushy)
+ * @author Van Taylor (van7)
+ * @author Omar Elgeoushy (omarelgeoushy)
  * @version 2021.04.19, 04/22/2021
  */
 public class AlphaSortComparator implements Comparator<Race> {

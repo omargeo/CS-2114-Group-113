@@ -10,7 +10,7 @@ import student.TestCase;
 /**
  * This class tests the Race class
  * 
- * @author Omar Elgeoushy omarelgeoushy
+ * @author Omar Elgeoushy (omarelgeoushy)
  * @version 04/21/2021
  *
  */

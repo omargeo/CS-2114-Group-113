@@ -10,7 +10,8 @@ import java.io.FileNotFoundException;
 /**
  * This class tests the CSVReader class
  * 
- * @author Van Taylor (van7), Omar Elgeoushy (omarelgeoushy)
+ * @author Van Taylor (van7)
+ * @author Omar Elgeoushy (omarelgeoushy)
  * @version 2021.04.19, 04/21/2021
  */
 public class CSVReaderTest extends student.TestCase {

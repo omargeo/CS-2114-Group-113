@@ -9,7 +9,7 @@ package prj5;
 /**
  * This class tests the AlphaSortComparator class
  * 
- * @author Omar Elgeoushy omarelgeoushy
+ * @author Omar Elgeoushy (omarelgeoushy)
  * @version 04/22/2021
  *
  */

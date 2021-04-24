@@ -10,7 +10,7 @@ package prj5;
  * This class is associated with the State and forms 
  * how it behaves
  * 
- * @author Omar Elgeoushy omarelgeoushy
+ * @author Omar Elgeoushy (omarelgeoushy)
  * @version 04/21/2021
  *
  */

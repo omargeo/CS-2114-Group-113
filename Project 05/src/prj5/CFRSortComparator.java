@@ -10,6 +10,7 @@ import java.util.Comparator;
 /**
  * Creates comparator to compare based on a race's Case Fatality Ratio
  * @author Van Taylor (van7)
+ * @author Omar Elgeoushy (omarelgeoushy)
  * @version 2021.04.19
  */
 public class CFRSortComparator implements Comparator<Race> {
