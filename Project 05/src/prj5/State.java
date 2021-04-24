@@ -72,7 +72,7 @@ public class State {
      * @return String of data
      */
     public String toString() {
-        String string =  ""; //+ getName() + "\n"; (had to remove name to be compatible with the webcat output)
+        String string =  "";
         for (int i = 0; i < raceList.size(); i++) {
             string += raceList.get(i);
                 //+ ": " + raceList.get(i).getCases() + 
