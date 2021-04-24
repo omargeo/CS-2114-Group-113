@@ -22,9 +22,15 @@ import java.util.NoSuchElementException;
  */
 public class SinglyLinkedList<E> implements Iterable<E> {
 
+    /**
+     * 
+     * @author Van Taylor (van7)
+     * @version 2021.04.23
+     * @param <A>
+     */
     private class SLListIterator<A> implements Iterator<E> {
         
-        public Node<E> curr;
+        private Node<E> curr;
         private SinglyLinkedList<E> list;
         
         /**
@@ -36,11 +42,11 @@ public class SinglyLinkedList<E> implements Iterable<E> {
         }
         
         /**
-         * Gets the current node in the list
-         * @return the current node
+         * gets the current node
+         * @return Node<E> of the current node
          */
-        private Node<E> current() {
-            return curr;
+        public Node<E> getCurrent() {
+            return curr;                       
         }
         
         /**
