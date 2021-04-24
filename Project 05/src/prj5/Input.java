@@ -1,9 +1,10 @@
 /**
  * @HonorCode As a Hokie, I will conduct myself with honor
- * and integrity at all times. I will not lie, cheat, or steal,
- * nor will I accept the actions of those who do.
+ *            and integrity at all times. I will not lie, cheat, or steal,
+ *            nor will I accept the actions of those who do.
  */
 package prj5;
+
 import java.io.FileNotFoundException;
 
 /**
@@ -13,15 +14,16 @@ import java.io.FileNotFoundException;
  * @author Ryan Clarke (ryanc01)
  * @author Van Taylor (van7)
  * @author Omar Elgeoushy (omarelgeoushy)
- * @version 04.23.2021
- *
+ * @version 04.23.2020
  */
 public class Input {
-    
+
     /**
      * Passes the correct data file on to the CSVReader to be parsed
-     * @param args the files being input by the user
-     * @throws FileNotFoundException 
+     * 
+     * @param args
+     *            the files being input by the user
+     * @throws FileNotFoundException
      */
     public static void main(String[] args) throws FileNotFoundException {
         CSVReader reader;
