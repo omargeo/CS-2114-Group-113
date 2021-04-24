@@ -123,9 +123,10 @@ public class StateTest extends student.TestCase {
      * tests the equals method and checkContent
      */
     public void testEquals() {
-        assertFalse(state == null);
-        
         Object obj = new Object();
+        assertFalse(state.equals(obj));
+        
+        obj = null;
         assertFalse(state.equals(obj));
         
         assertTrue(state.equals(state));
