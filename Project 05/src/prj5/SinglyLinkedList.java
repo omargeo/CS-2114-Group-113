@@ -26,8 +26,12 @@ import java.util.NoSuchElementException;
  * @author JW Lee (jiayiw6)
  * @version 10/14/2019
  * changes made by:
+ * @author Ryan Clarke (ryanc01)
+ * @version 2021.04.22
+ * @author Omar Elgeoushy (omarelgeoushy)
+ * @version 04/23/2021
  * @author Van Taylor (van7)
- * @version 04.22.2021
+ * @version 2021.04.23
  *
  * @param <E>
  *            the generic element
@@ -70,7 +74,7 @@ public class SinglyLinkedList<E> implements Iterable<E> {
         @Override
         public boolean hasNext() {
             boolean next = true;
-            if (curr.next.data == null) {
+            if (curr.next == null) {
                 next = false;
             }
             return next;

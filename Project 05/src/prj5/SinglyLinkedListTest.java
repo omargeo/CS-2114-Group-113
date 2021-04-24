@@ -2,6 +2,8 @@ package prj5;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 import student.TestCase;
 
 /**
@@ -23,6 +25,7 @@ public class SinglyLinkedListTest extends TestCase {
     private SinglyLinkedList<String> smallListB;
     private SinglyLinkedList<String> bigListA;
     private SinglyLinkedList<String> bigListB;
+    private SinglyLinkedList<String> oneItemList;
     private String nullObject;
     
     /**
@@ -41,6 +44,8 @@ public class SinglyLinkedListTest extends TestCase {
 
         smallListA = new SinglyLinkedList<String>();
         smallListB = new SinglyLinkedList<String>();
+        
+        oneItemList = new SinglyLinkedList<String>();
 
         smallListA.add("soccer");
         smallListA.add("swimming");
@@ -49,6 +54,8 @@ public class SinglyLinkedListTest extends TestCase {
         smallListB.add("soccer");
         smallListB.add("swimming");
         smallListB.add("gymnastics");
+        
+        oneItemList.add("soccer");
 
         bigListA = new SinglyLinkedList<String>();
 
@@ -63,6 +70,30 @@ public class SinglyLinkedListTest extends TestCase {
         
         // to be explicit
         nullObject = null;
+    }
+    /**
+     * tests the iterator for a good list in the singly linked list
+     */
+    public void testSinglyLinkedListIterator1() {
+        Iterator<String> iter = bigListA.iterator();
+        assertTrue(iter.hasNext());
+        assertNotNull(iter.next());
+    }
+    
+    /**
+     * tests the iterator for a bad list in the singly linked list
+     */
+    public void testSinglyLinkedListIterator2() {
+        Iterator<String> iter = oneItemList.iterator();
+        assertFalse(iter.hasNext());
+        Exception theException = null;
+        try {
+            iter.next();            
+        }
+        catch (NoSuchElementException e) {
+            theException = e;
+        }
+        assertNotNull(theException);
     }
 
 
