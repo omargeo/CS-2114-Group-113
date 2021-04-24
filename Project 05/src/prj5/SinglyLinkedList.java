@@ -153,7 +153,7 @@ public class SinglyLinkedList<E> implements Iterable<E> {
     // the size of the linked list
     private int size;
     
-    private Iterator<E> iter;
+    //private Iterator<E> iter;
 
 
     /**
@@ -162,7 +162,8 @@ public class SinglyLinkedList<E> implements Iterable<E> {
     public SinglyLinkedList() {
         head = null;
         size = 0;
-        iter = iterator();
+        @SuppressWarnings("unused")
+        Iterator<E> iter = iterator();
     }
 
     /**
