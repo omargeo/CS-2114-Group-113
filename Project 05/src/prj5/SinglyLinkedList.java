@@ -16,7 +16,6 @@ import java.util.NoSuchElementException;
  * to sort the different Races.
  * 
  * @author Ryan Clarke (ryanc01)
- * @author Omar Elgeoushy (omarelgeoushy)
  * @version 04.22.2021
  *
  * @param <E> the generic element
@@ -29,11 +28,9 @@ public class SinglyLinkedList<E> implements Iterable<E> {
      * @version 2021.04.23
      * @param <A>
      */
-    private class SLListIterator<A> implements Iterator<E> {
-        
+    private class SLListIterator<A> implements Iterator<E> {        
         private Node<E> curr;
-        private SinglyLinkedList<E> list;
-        
+        private SinglyLinkedList<E> list;        
         /**
          * Creates a new SLListIterator
          */
@@ -46,9 +43,9 @@ public class SinglyLinkedList<E> implements Iterable<E> {
          * gets the current node
          * @return Node<E> of the current node
          */
-        //public Node<E> getCurrent() {
-        //    return curr;                       
-        //}
+        public Node<E> getCurrent() {
+            return curr;                       
+        }
         
         /**
          * Checks if there are more elements in the list
@@ -86,12 +83,20 @@ public class SinglyLinkedList<E> implements Iterable<E> {
         
         
     }
-    
+    /**
+     * 
+     * @return
+     */
     @Override
     public Iterator<E> iterator() {
         return new SLListIterator<E>(this);
-    }
-    
+    }    
+    /**
+     * class for the node
+     * @author Van Taylor (van7)
+     * @version 2021.04.23
+     * @param <D> is the generic type for the node
+     */
     public static class Node<D> {
 
         // The data element stored in the node.
@@ -520,7 +525,7 @@ public class SinglyLinkedList<E> implements Iterable<E> {
      * @param node is the node to be inserted into the sorted list
      */
     private void sort(Comparator<E> comp, Node<E> node) {
-        //sE data = node.getData();
+        E data = node.getData();
         Node<E> current = head;
         Node<E> beforeCurrent = null;
         //head -> 1
