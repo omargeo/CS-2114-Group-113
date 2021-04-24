@@ -503,15 +503,15 @@ public class SinglyLinkedListTest extends TestCase {
         list.add(race1);
         list.add(race2);
         list.add(race3);
-        assertEquals("{White: 10 cases, 10.0% CFR, Black: 8 cases, "
-            + "0.0% CFR, Asian: 14 cases, 14.3% CFR}", list.toString());
+        assertEquals("{White: 10 cases, 10% CFR, Black: 8 cases, "
+            + "0% CFR, Asian: 14 cases, 14.3% CFR}", list.toString());
         Comparator<Race> alpha = new AlphaSortComparator();
         Comparator<Race> cfr = new CFRSortComparator();
         list.insertionSort(alpha);
         assertEquals("{Asian: 14 cases, 14.3% CFR, Black: 8 cases, "
-            + "0.0% CFR, White: 10 cases, 10.0% CFR}", list.toString());
+            + "0% CFR, White: 10 cases, 10% CFR}", list.toString());
         list.insertionSort(cfr);
         assertEquals("{Asian: 14 cases, 14.3% CFR, White: 10 cases, "
-            + "10.0% CFR, Black: 8 cases, 0.0% CFR}", list.toString());
+            + "10% CFR, Black: 8 cases, 0% CFR}", list.toString());
     }
 }

@@ -114,9 +114,9 @@ public class StateTest extends student.TestCase {
      * tests the toString method
      */
     public void testToString() {
-        assertEquals("White: 10 cases, 30.0% CFR\n"
-            + "Asian: 10 cases, 20.0% CFR\n"
-            + "Black: 10 cases, 40.0% CFR", state.toString());
+        assertEquals("White: 10 cases, 30% CFR\n"
+            + "Asian: 10 cases, 20% CFR\n"
+            + "Black: 10 cases, 40% CFR", state.toString());
     }
     
     /**
