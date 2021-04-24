@@ -158,5 +158,12 @@ public class StateTest extends student.TestCase {
         races2.add(other);
         state2 = new State("VA", races2);
         assertFalse(state2.equals(state1));
+        
+        other = new Race("White", 10, 3);
+        races2 = new SinglyLinkedList<Race>();
+        races2.add(other);
+        races2.add(other);
+        state2 = new State("V", races2);
+        assertFalse(state2.equals(state1));
     }
 }
