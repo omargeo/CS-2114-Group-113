@@ -60,6 +60,12 @@ public class RaceTest extends TestCase {
      */
     public void testCaseFatalityRatio() {
         assertEquals(42.8, black.caseFatalityRatio(), 3);
+        
+        black = new Race("Black", -1, 0);
+        assertEquals(-1, black.caseFatalityRatio(), 1);
+        
+        black = new Race("Black", 0, -1);
+        assertEquals(-1, black.caseFatalityRatio(), 1);
     }
     
     /**
