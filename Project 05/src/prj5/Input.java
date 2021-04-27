@@ -40,6 +40,7 @@ public class Input {
                 System.out.println(currentState.toString());
                 System.out.println("=====");
             }
+            GUIWindow window = new GUIWindow(theStates);
         }
         else {
             reader = new CSVReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
@@ -54,6 +55,7 @@ public class Input {
                 System.out.println(currentState.toString());
                 System.out.println("=====");
             }
+            GUIWindow window = new GUIWindow(theStates);
         }
 
     }
