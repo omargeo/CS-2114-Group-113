@@ -22,7 +22,7 @@ import cs2.WindowSide;
  * ratio.
  * 
  * @author Ryan Clarke (ryanc01)
- * @version 04.27.2021
+ * @version 04.28.2021
  *
  */
 public class GUIWindow {
@@ -142,17 +142,29 @@ public class GUIWindow {
                 Shape shape = new Shape((100 + (i * 150)), 100, 25, ((int) 
                     (cfr * 10)));
                 window.addShape(shape);
+                adjustHeight(shape);
                 TextShape name = new TextShape(15, 5, race.getName());
                 window.addShape(name);
-                name.moveTo((100 + (i * 150)), 250);
+                name.moveTo((90 + (i * 150)), 250);
                 DecimalFormat df = new DecimalFormat("0.#");
                 
                 TextShape ratio = new TextShape(10, 5, df.format(cfr) + 
                     "%");
                 window.addShape(ratio);
-                ratio.moveTo((100 + (i * 150)), 275);
+                ratio.moveTo((90 + (i * 150)), 275);
             }
             
         }
+    }
+    
+    /**
+     * Moves the shape down so it is sitting on the x-axis of the graph
+     * @param shape
+     *          the specified shape to be moved
+     */
+    private void adjustHeight(Shape shape) {
+        int height = shape.getHeight();
+        int newY = 125 - height;
+        shape.move(0, newY);
     }
 }
