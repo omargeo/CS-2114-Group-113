@@ -19,7 +19,7 @@ import java.util.NoSuchElementException;
  * @author Jeff Robertson (thejar)
  * @author Omar Elgeoushy (omarelgeoushy)
  * @author Van Taylor (van7)
- * @version 04/22/2021
+ * @version 04/29/2021
  *
  */
 public class SinglyLinkedListTest extends TestCase {
@@ -545,5 +545,18 @@ public class SinglyLinkedListTest extends TestCase {
         list.insertionSort(cfr);
         assertEquals("{Asian: 14 cases, 14.3% CFR, White: 10 cases, "
             + "10% CFR, Black: 8 cases, 0% CFR}", list.toString());
+    }
+    /**
+     * tests the sort on a list with size less than 1
+     */
+    public void testSortEmpty() {
+        SinglyLinkedList<Race> list = new SinglyLinkedList<Race>();
+        assertEquals("{}", list.toString());
+        Comparator<Race> alpha = new AlphaSortComparator();
+        Comparator<Race> cfr = new CFRSortComparator();
+        list.insertionSort(alpha);
+        assertEquals("{}", list.toString());
+        list.insertionSort(cfr);
+        assertEquals("{}", list.toString());
     }
 }
