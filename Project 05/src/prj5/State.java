@@ -7,24 +7,21 @@
 package prj5;
 
 /**
- * This class is associated with the State and forms 
- * how it behaves
+ * The state class for the COVID-19 visualization. For each state, you can sort
+ * its races by CFR or alpha. you can also get the SinglyLinkedList of races
+ * in the state. you can print the data from the state by calling toString. 
+ * Lastly, you can check if two states are equal to each other
+ * by checking its name and the contents of its raceList
  * 
  * @author Omar Elgeoushy (omarelgeoushy)
+ * @author Van Taylor (van7)
  * @version 04/21/2021
- *
  */
 public class State {
-    /**
-     * A variable that holds the name
-     */
+    // ~ Fields ------------------------------------------------------------
     private String name;
-    
-    /**
-     * A variable that holds the raceList
-     */
     private SinglyLinkedList<Race> raceList;
-    
+    // ~ Constructors ------------------------------------------------------
     /**
      * Constructor of the class
      * @param name the name of the state
@@ -34,7 +31,7 @@ public class State {
         this.name = name;
         this.raceList = races;
     }
-    
+    // ~ Methods -----------------------------------------------------------
     /**
      * A getter method for the name
      * @return a string 
@@ -75,16 +72,10 @@ public class State {
         String string =  "";
         for (int i = 0; i < raceList.size(); i++) {
             string += raceList.get(i);
-                //+ ": " + raceList.get(i).getCases() + 
-                //"cases, " + raceList.get(i).caseFatalityRatio() + "CFR");
-            //string += String.format("s%: %d cases, %.2f CFR", 
-            //    raceList.get(i), raceList.get(i).getCases(), 
-            //    raceList.get(i).caseFatalityRatio());
             if (i < raceList.size() - 1) {
                 string += "\n";
             }
-        }
-        
+        }        
         return string;
     }
     

@@ -9,6 +9,7 @@ import java.util.Comparator;
 
 /**
  * Creates comparator to compare based on a race's Case Fatality Ratio
+ * if the case fatality ratios are equal, it compares using AlphaSortComparator
  * @author Van Taylor (van7)
  * @author Omar Elgeoushy (omarelgeoushy)
  * @version 2021.04.19
@@ -16,7 +17,6 @@ import java.util.Comparator;
 public class CFRSortComparator implements Comparator<Race> {
     /**
      * We compare two races by their case fatality ratio
-     * Note: sort ranks smallest to largest
      * @param race1 is the current race
      * @param race2 is the race to compare to
      * @return the relationship between the two CFR values from the race class

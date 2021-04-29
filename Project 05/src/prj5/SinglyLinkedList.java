@@ -25,6 +25,7 @@ import java.util.NoSuchElementException;
  * @version 03/16/2017
  * @author JW Lee (jiayiw6)
  * @version 10/14/2019
+ * 
  * changes made by:
  * @author Ryan Clarke (ryanc01)
  * @version 2021.04.22
@@ -37,17 +38,18 @@ import java.util.NoSuchElementException;
  *            the generic element
  */
 public class SinglyLinkedList<E> implements Iterable<E> {
-
+    // ~ Nested Classes ---------------------------------------------------
     /**
-     * 
+     * class for SinglyLinkedList iterator
      * @author Van Taylor (van7)
      * @version 2021.04.23
      * @param <A>
      */
     private class SLListIterator<A> implements Iterator<E> {
+        // ~ Fields ---------------------------------------------------------
         private Node<E> curr;
         private SinglyLinkedList<E> list;
-
+        // ~ Constructors ---------------------------------------------------
         /**
          * Creates a new SLListIterator
          */
@@ -55,17 +57,7 @@ public class SinglyLinkedList<E> implements Iterable<E> {
             list = sLList;
             curr = list.head;
         }
-
-        /**
-         * gets the current node
-         * 
-         * @return Node<E> of the current node
-         */
-        // public Node<E> getCurrent() {
-        // return curr;
-        // }
-
-
+        // ~ Methods --------------------------------------------------------
         /**
          * Checks if there are more elements in the list
          *
@@ -79,7 +71,6 @@ public class SinglyLinkedList<E> implements Iterable<E> {
             }
             return next;
         }
-
 
         /**
          * Gets the next value in the list
@@ -97,37 +88,22 @@ public class SinglyLinkedList<E> implements Iterable<E> {
             curr = curr.next();
             return data;
         }
-
-        // Not sure we need a remove method since our list is only
-        // singly-linked and there is no previous node -RC
-
     }
-
-    /**
-     * 
-     * @return
-     */
-    @Override
-    public Iterator<E> iterator() {
-        return new SLListIterator<E>(this);
-    }
-
     /**
      * class for the node
-     * 
-     * @author Van Taylor (van7)
+     * @author Omar Elgeoushy (omarelgeoushy)
+     * @author Van Taylor (van7) 
      * @version 2021.04.23
      * @param <D>
      *            is the generic type for the node
      */
     public static class Node<D> {
-
+        // ~ Fields ----------------------------------------------------------
         // The data element stored in the node.
         private D data;
-
         // The next node in the sequence.
         private Node<D> next;
-
+        // ~ Constructors ----------------------------------------------------
         /**
          * Creates a new node with the given data
          *
@@ -137,8 +113,7 @@ public class SinglyLinkedList<E> implements Iterable<E> {
         public Node(D d) {
             data = d;
         }
-
-
+        // ~ Methods ---------------------------------------------------------
         /**
          * Sets the node after this node
          *
@@ -149,7 +124,6 @@ public class SinglyLinkedList<E> implements Iterable<E> {
             next = n;
         }
 
-
         /**
          * Gets the next node
          *
@@ -158,7 +132,6 @@ public class SinglyLinkedList<E> implements Iterable<E> {
         public Node<D> next() {
             return next;
         }
-
 
         /**
          * Gets the data in the node
@@ -169,25 +142,30 @@ public class SinglyLinkedList<E> implements Iterable<E> {
             return data;
         }
     }
-
+    // ~ Fields ------------------------------------------------------------
     private Node<E> head;
-
-    // the size of the linked list
     private int size;
-
-    // private Iterator<E> iter;
-
+    // ~ Constructors ------------------------------------------------------
+    /**
+     * creates new iterator for SinglyLinkedList
+     * @return the new SinglyLinkedList iterator
+     */
+    @Override
+    public Iterator<E> iterator() {
+        return new SLListIterator<E>(this);
+    }
     /**
      * Creates a new LinkedList object
      */
+    @SuppressWarnings("unused")
     public SinglyLinkedList() {
         head = null;
         size = 0;
-        @SuppressWarnings("unused")
+        //iterator constructor required for the implementation of iterable
         Iterator<E> iter = iterator();
     }
-
-
+    
+    // ~ Methods ------------------------------------------------------
     /**
      * Gets the number of elements in the list
      *
@@ -196,7 +174,6 @@ public class SinglyLinkedList<E> implements Iterable<E> {
     public int size() {
         return size;
     }
-
 
     /**
      * Adds the object to the position in the list
@@ -320,9 +297,6 @@ public class SinglyLinkedList<E> implements Iterable<E> {
         // account for 2+ size
         while (size() >= 2 && (current.next != null)) {
             if ((obj.equals(current.next.data))) {
-                // if (current.next.next != null) {
-                // current.setNext(current.next.next);
-                // }
                 current.setNext(current.next.next);
                 size--;
                 return true;
@@ -545,23 +519,19 @@ public class SinglyLinkedList<E> implements Iterable<E> {
 
     /**
      * Sorts the races list based on alphabet or CFR value
-     * 
+     * method uses a loop to compare until
+     * current is null or compare returns an integer less than 0
+     * insertion happens at 1 node prior to the node at which current > data
+     * at the end, if the head is greater than what we're trying to insert
+     * we insert that node before the present head then set that node to head
      * @param comp
      *            is the comparator used to compare nodes in the list
      * @param node
      *            is the node to be inserted into the sorted list
      */
     private void sort(Comparator<E> comp, Node<E> node) {
-        // E data = node.getData();
         Node<E> current = head;
         Node<E> beforeCurrent = null;
-        // head -> 1
-        // head -> 1
-        // head.next -> 4
-        // Node<E> beforeCurrent = head;
-        // node data is it greater than node we're currently on?
-        // keep going until it is not greater than anymore
-        // insertion happens at 1 node prior to the node at which current > data
         while (current != null && (comp.compare(node.getData(), current
             .getData()) > 0)) {
             beforeCurrent = current;
@@ -573,8 +543,6 @@ public class SinglyLinkedList<E> implements Iterable<E> {
             beforeCurrent.setNext(node);
         }
         else {
-            // if the head is greater than what we're trying to insert
-            // we need to insert that node before the head
             head = node;
         }
     }

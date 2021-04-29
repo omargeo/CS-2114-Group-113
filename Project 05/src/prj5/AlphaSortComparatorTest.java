@@ -5,15 +5,16 @@
  */
 
 package prj5;
+import student.TestCase;
 
 /**
- * This class tests the AlphaSortComparator class
+ * This class tests the AlphaSortComparator class 
+ * it verifies the comparator sorts based on alphabetical order
  * 
  * @author Omar Elgeoushy (omarelgeoushy)
  * @version 04/22/2021
- *
  */
-public class AlphaSortComparatorTest extends student.TestCase {
+public class AlphaSortComparatorTest extends TestCase {
     
     /**
      * Tests the compare method 

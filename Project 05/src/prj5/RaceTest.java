@@ -8,24 +8,18 @@ package prj5;
 import student.TestCase;
 
 /**
- * This class tests the Race class
+ * This class tests the Race class for expected behavior.
+ * methods tested include: getters, calculation of case fatality ratio,
+ * toString, equals, and the constructor.
  * 
  * @author Omar Elgeoushy (omarelgeoushy)
  * @version 04/21/2021
- *
  */
 public class RaceTest extends TestCase {
-    
-    /**
-     * a variable that holds the race
-     */
+    // ~ Fields ------------------------------------------------------------
     private Race black;
-    
-    /**
-     * a variable that holds the race
-     */
     private Race white;
-    
+    // ~ Constructors ------------------------------------------------------
     /**
      * setUp method of the testing class
      */
@@ -33,7 +27,8 @@ public class RaceTest extends TestCase {
         black = new Race("Black", 7, 3);
         white = new Race("White", 10, 4);
     }
-
+    
+    // ~ Methods ------------------------------------------------------
     /**
      * tests getName method
      */

@@ -5,41 +5,22 @@
  */
 
 package prj5;
+import student.TestCase;
 
 /**
- * This class tests the State class
+ * This class tests the State class methods for expected behavior
  * 
  * @author Omar Elgeoushy (omarelgeoushy)
  * @version 04/21/2021
- *
  */
-public class StateTest extends student.TestCase {
-    
-    /**
-     * A variable that holds the state
-     */
+public class StateTest extends TestCase {
+    // ~ Fields ------------------------------------------------------------
     private State state;
-    
-    /**
-     * a variable that holds the races
-     */
     private SinglyLinkedList<Race> races;
-    
-    /**
-     * a variable that holds the race
-     */
     private Race black;
-    
-    /**
-     * a variable that holds the race
-     */
     private Race white;
-    
-    /**
-     * a variable that holds the race
-     */
     private Race asian;
-    
+    // ~ Constructors ------------------------------------------------------
     /**
      * setUp method of the testing class
      */
@@ -56,6 +37,7 @@ public class StateTest extends student.TestCase {
         state = new State("VA", races);
     }
     
+    // ~ Methods -----------------------------------------------------------
     /**
      * tests the getName method
      */

@@ -5,7 +5,6 @@
  */
 
 package prj5;
-
 import java.text.DecimalFormat;
 
 /**
@@ -16,24 +15,12 @@ import java.text.DecimalFormat;
  * @author Omar Elgeoushy (omarelgeoushy)
  * @version 04/21/2021
  */
-
-public class Race {
-    
-    /**
-     * A variable that holds the name
-     */
+public class Race {    
+    // ~ Fields ------------------------------------------------------------
     private String name;
-    
-    /**
-     * A variable that holds the cases
-     */
     private int cases;
-    
-    /**
-     * A variable that holds the deaths
-     */
     private int deaths;
-    
+    // ~ Constructors ------------------------------------------------------
     /**
      * Constructor of the class
      * @param name the name of the race
@@ -45,7 +32,7 @@ public class Race {
         this.cases = cases;
         this.deaths = deaths;
     }
-    
+    // ~ Methods -----------------------------------------------------------
     /**
      * A getter method for the name
      * @return String of the name
@@ -71,7 +58,7 @@ public class Race {
     }
     
     /**
-     * To String Output: "Race: int cases, Percent% CFR"
+     * To String Output: "RaceName: int cases, Percent% CFR"
      * @return the string output of this race's attributes
      */
     public String toString() {
@@ -82,7 +69,7 @@ public class Race {
     }
     
     /**
-     * Two races are equal if their names are equal
+     * Two races are equal if their names, cases, and deaths are equal
      * @param obj is the object to compare to current race
      * @return whether the object is a race equal to the current race
      */
@@ -100,8 +87,8 @@ public class Race {
     }
     
     /**
-     * Calculates the CFR 
-     * @return double of the CFR
+     * Calculates the CFR
+     * @return double value representing the CFR
      */
     public double caseFatalityRatio() {  
         if ((getDeaths() < 0) || (getCases() < 0)) {

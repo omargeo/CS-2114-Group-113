@@ -1,24 +1,29 @@
+/**
+ * @HonorCode As a Hokie, I will conduct myself with honor
+ * and integrity at all times. I will not lie, cheat, or steal,
+ * nor will I accept the actions of those who do.
+ */
 package prj5;
 
+import student.TestCase;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import student.TestCase;
 
 /**
  * 
- * Tests the equals and toArray methods of a singly linked list.
+ * Tests the methods & nested classes within the SinglyLinkedList class
  * 
  * @author Margaret Ellis (maellis1)
  * @author Jeff Robertson (thejar)
  * @author Omar Elgeoushy (omarelgeoushy)
- * 
+ * @author Van Taylor (van7)
  * @version 04/22/2021
  *
  */
 public class SinglyLinkedListTest extends TestCase {
-
+    // ~ Fields ------------------------------------------------------------
     private SinglyLinkedList<String> emptyListA;
     private SinglyLinkedList<String> emptyListB;
     private SinglyLinkedList<String> smallListA;
@@ -26,14 +31,10 @@ public class SinglyLinkedListTest extends TestCase {
     private SinglyLinkedList<String> bigListA;
     private SinglyLinkedList<String> bigListB;
     private SinglyLinkedList<String> oneItemList;
-    private String nullObject;
-    
-    /**
-     * the exception that is being used for testing
-     */
-    private Exception thrown = new Exception();
+    private String nullObject;    
+    private Exception thrown = new Exception(); //exception used for testing
 
-
+    // ~ Constructors ------------------------------------------------------
     /**
      * Initializes 2 empty lists, 2 lists with a small number of items, and 2
      * lists with a large number of items
@@ -71,6 +72,7 @@ public class SinglyLinkedListTest extends TestCase {
         // to be explicit
         nullObject = null;
     }
+    // ~ Methods -----------------------------------------------------------
     /**
      * tests the iterator for a good list in the singly linked list
      */
@@ -346,11 +348,10 @@ public class SinglyLinkedListTest extends TestCase {
         emptyListA.add(1, "input1");
         emptyListA.remove(0);
         assertTrue(emptyListA.toString().equals("{input1}"));
-        //assertTrue(emptyListA.toString().equals("{input, input1}"));
         
         emptyListA.add(0, "input0");
         emptyListA.remove(1);
-        //assertTrue(emptyListA.toString().equals("{input0, input, input1}"));
+        assertTrue(emptyListA.toString().equals("{input0}"));
     }
     
     /**

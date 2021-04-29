@@ -8,7 +8,9 @@ package prj5;
 import java.util.Comparator;
 
 /**
- * compares the names of races using the comparator class.
+ * This class compares the names of races using compareTo from the string class
+ * the compareTo method completes the complex behavior of comparing strings
+ * lexicographically
  * @author Van Taylor (van7)
  * @author Omar Elgeoushy (omarelgeoushy)
  * @version 2021.04.19, 04/22/2021
@@ -16,7 +18,7 @@ import java.util.Comparator;
 public class AlphaSortComparator implements Comparator<Race> {
 
     /**
-     * compares the two strings lexicographically
+     * compares two race's names lexicographically
      * @param race1 is the current string 
      * @param race2 is the string to compare with the current string
      * @return the relationship, -1, 0, or 1 based on the alphabetical 

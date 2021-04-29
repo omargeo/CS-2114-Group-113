@@ -41,8 +41,8 @@ public class GUIWindow {
     
     /**
      * Creates a new GUIWindow object
-     * @param newList 
- *                  the list of states to be represented on the window
+     * @param newList
+     *               the list of states to be represented on the window
      */
     public GUIWindow(SinglyLinkedList<State> newList) {
         list = newList;
@@ -189,8 +189,7 @@ public class GUIWindow {
                     "%");
                 window.addShape(ratio);
                 ratio.moveTo((90 + (i * 150)), 275);
-            }
-            
+            }            
         }
         current = state;
     }

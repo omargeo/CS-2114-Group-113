@@ -6,6 +6,7 @@
 package prj5;
 
 import java.io.FileNotFoundException;
+import student.TestCase;
 
 /**
  * This class tests the CSVReader class
@@ -14,9 +15,11 @@ import java.io.FileNotFoundException;
  * @author Omar Elgeoushy (omarelgeoushy)
  * @version 2021.04.19, 04/21/2021
  */
-public class CSVReaderTest extends student.TestCase {
+public class CSVReaderTest extends TestCase {
+    // ~ Fields ------------------------------------------------------------
     private CSVReader reader;
-
+    
+    // ~ Methods -----------------------------------------------------------
     /**
      * tests the CSV for the default file
      */
