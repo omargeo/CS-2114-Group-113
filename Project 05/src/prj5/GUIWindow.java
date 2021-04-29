@@ -32,6 +32,7 @@ public class GUIWindow {
     private Button quit;
     private Button sortByAlpha;
     private Button sortByCFR;
+    private State current;
     
     /**
      * Creates a new GUIWindow object
@@ -56,8 +57,8 @@ public class GUIWindow {
             window.addButton(repState, WindowSide.SOUTH);
             repState.onClick(this, "clickedState");
         }
-        State firstState = list.get(0);
-        displayState(firstState);
+        current = list.get(0);
+        displayState(current);
     }
     
     /**
@@ -75,7 +76,9 @@ public class GUIWindow {
      *          the "Sort by Alpha" button
      */
     public void clickedAlpha(Button button) {
-        //TODO
+        window.removeAllShapes();
+        current.sortByAlpha();
+        displayState(current);
     }
     
     /**
@@ -85,7 +88,9 @@ public class GUIWindow {
      *          the "Sort by CFR" button
      */
     public void clickedCFR(Button button) {
-        //TODO
+        window.removeAllShapes();
+        current.sortByCFR();
+        displayState(current);
     }
     
     /**
@@ -122,7 +127,7 @@ public class GUIWindow {
         TextShape title = new TextShape(30, 10, state.getName() + " Case " + 
             "Fatality Ratios by Race");
         window.addShape(title);
-        title.moveTo(((window.getWidth() / 2) - 35), title.getHeight());
+        title.moveTo(300, title.getHeight());
         SinglyLinkedList<Race> races = state.getRaces();
         //generates the cfr bar graph for each race in that state
         for (int i = 0; i < races.size(); i++) {
@@ -155,6 +160,7 @@ public class GUIWindow {
             }
             
         }
+        current = state;
     }
     
     /**
