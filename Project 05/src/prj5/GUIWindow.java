@@ -33,6 +33,13 @@ public class GUIWindow {
     private Button sortByAlpha;
     private Button sortByCFR;
     private State current;
+    private Button state1;
+    private Button state2;
+    private Button state3;
+    private Button state4;
+    private Button state5;
+    private Button state6;
+    private Button buttons[];
     
     /**
      * Creates a new GUIWindow object
@@ -51,15 +58,47 @@ public class GUIWindow {
         sortByCFR = new Button("Sort by CFR");
         window.addButton(sortByCFR, WindowSide.NORTH);
         sortByCFR.onClick(this, "clickedCFR");
-        for (int i = 0; i < list.size(); i++) {
-            State state = list.get(i);
-            Button repState = new Button("Represent " + state.getName());
-            window.addButton(repState, WindowSide.SOUTH);
-            repState.onClick(this, "clickedState");
-        }
+        buttons = addButtons();
         current = list.get(0);
         displayState(current);
     }
+    
+    /**
+     * Getter method for the names of the states on display
+     * @param list
+     *          the list of the states on display
+     * @return
+     *          an array of the states' names
+     */
+    private String[] getNames(SinglyLinkedList<State> list) {
+        String[] names = new String[6];
+        for (int i = 0; i < 6; i++) {
+            State state = list.get(i);
+            names[i] = state.getName();
+        }
+        return names; 
+    }
+    
+    /**
+     * Adds the buttons representing each state at the bottom of the window
+     * @return
+     *          the state-representing buttons in an array
+     */
+    private Button[] addButtons() {
+        String[] names = getNames(list);
+        state1 = new Button("Represent " + names[0]);
+        state2 = new Button("Represent " + names[1]);
+        state3 = new Button("Represent " + names[2]);
+        state4 = new Button("Represent " + names[3]);
+        state5 = new Button("Represent " + names[4]);
+        state6 = new Button("Represent " + names[5]);
+        Button stateRep[] = {state1, state2, state3, state4, state5, state6};
+        for (Button button : stateRep) {
+            window.addButton(button, WindowSide.SOUTH);
+            button.onClick(this, "clickedState");
+        }
+        return stateRep;
+    } 
     
     /**
      * Closes out of the window when the "Quit" button is clicked
@@ -100,20 +139,15 @@ public class GUIWindow {
      * @param list 
      *          the list of states
      */
-    public void clickedState(Button button, SinglyLinkedList<State> list) {
-        String name = button.getTitle();
-        Scanner scanner = new Scanner(name);
-        String line = scanner.nextLine();
-        String[] lineData = line.split(" ");
-        //We know the name of the state will be the second item in the list
-        String stateName = lineData[1];
+    public void clickedState(Button button) {
+        window.removeAllShapes();
+        Button clicked = button;
         State target = null;
-        for (int i = 0; i < list.size(); i++) {
-            if ((target == null) && (list.get(i).getName() == stateName)) {
+        for (int i = 0; i < 6; i++) {
+            if (clicked == buttons[i]) {
                 target = list.get(i);
             }
-        }
-        scanner.close();
+        } 
         displayState(target);
     }
     
@@ -137,10 +171,10 @@ public class GUIWindow {
             if (cfr < 0) {
                 TextShape notAvail = new TextShape(10, 5, "NA");
                 window.addShape(notAvail);
-                notAvail.moveTo((100 + (i * 150)), 300);
+                notAvail.moveTo((100 + (i * 150)), 220);
                 TextShape name = new TextShape(15, 5, race.getName());
                 window.addShape(name);
-                name.moveTo((100 + (i * 150)), 320);
+                name.moveTo((100 + (i * 150)), 250);
             }
             //displays bar graph and ratio % if there is data
             else {

@@ -33,7 +33,7 @@ public class Input {
             GUIWindow window = new GUIWindow(theStates);
         }
         else {
-            reader = new CSVReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
+            reader = new CSVReader("Cases_and_Deaths_CRDT_NEW.csv");
             SinglyLinkedList<State> theStates = reader.getStates();
             GUIWindow window = new GUIWindow(theStates);
         }
