@@ -30,31 +30,11 @@ public class Input {
         if (args.length == 1) {
             reader = new CSVReader(args[0]);
             SinglyLinkedList<State> theStates = reader.getStates();
-            for (int i = 0; i < theStates.size(); i++) {
-                State currentState = theStates.get(i);
-                System.out.println(currentState.getName());
-                currentState.sortByAlpha();
-                System.out.println(currentState.toString());
-                System.out.println("=====");
-                currentState.sortByCFR();
-                System.out.println(currentState.toString());
-                System.out.println("=====");
-            }
             GUIWindow window = new GUIWindow(theStates);
         }
         else {
             reader = new CSVReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
             SinglyLinkedList<State> theStates = reader.getStates();
-            for (int i = 0; i < theStates.size(); i++) {
-                State currentState = theStates.get(i);
-                System.out.println(currentState.getName());
-                currentState.sortByAlpha();
-                System.out.println(currentState.toString());
-                System.out.println("=====");
-                currentState.sortByCFR();
-                System.out.println(currentState.toString());
-                System.out.println("=====");
-            }
             GUIWindow window = new GUIWindow(theStates);
         }
 
