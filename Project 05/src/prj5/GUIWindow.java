@@ -6,8 +6,6 @@
 package prj5;
 
 import java.text.DecimalFormat;
-import java.util.Comparator;
-import java.util.Scanner;
 import cs2.Button;
 import cs2.Shape;
 import cs2.TextShape;
